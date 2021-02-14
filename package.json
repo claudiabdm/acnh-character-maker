@@ -1,5 +1,5 @@
 {
-  "name": "anch-char-maker",
+  "name": "acnh-char-maker",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -46,7 +46,21 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true
+        },
+        {
+          "vueIndentScriptAndStyle": true
+        }
+      ],
+      "quotes": [
+        2,
+        "single"
+      ]
+    }
   },
   "browserslist": [
     "> 1%",

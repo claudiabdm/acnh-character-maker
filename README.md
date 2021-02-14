@@ -1,4 +1,4 @@
-# anch-char-maker
+# acnh-char-maker
 
 ## Project setup
 ```

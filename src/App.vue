@@ -1,27 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <main>
+    <div class="character">
+      <the-character></the-character>
+    </div>
+    <div class="settings"></div>
+  </main>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
-
+import { defineComponent } from 'vue';
+import TheCharacter from './components/TheCharacter.vue';
 export default defineComponent({
-  name: "App",
-  components: {
-    HelloWorld
-  }
+  name: 'App',
+  components: { TheCharacter }
 });
 </script>
 
 <style lang="scss">
+@import '~@/assets/styles/styles.scss';
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  @include absolute(0, 0, 0, 0);
+  @include size(100%, 100%);
+  background-image: url('~@/assets/newhorizons_wallpaper_CharEditor.png');
 }
 </style>
