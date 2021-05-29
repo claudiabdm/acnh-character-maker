@@ -1,0 +1,53 @@
+<template>
+  <section class="viewer">
+    <div class="viewer__avatar">
+      <the-character></the-character>
+    </div>
+    <button class="btn" type="button" @click="downloadSVGAsPNG">
+      {{ downloadText }}
+    </button>
+  </section>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import html2canvas from 'html2canvas';
+import TheCharacter from '@/components/TheCharacter.vue';
+
+export default defineComponent({
+  components: { TheCharacter },
+  data() {
+    return {
+      downloadText: 'Download Image'
+    };
+  },
+  methods: {
+    downloadSVGAsPNG() {
+      this.downloadText = 'Loading...';
+      const svg = document.getElementsByClassName(
+        'viewer__avatar'
+      )[0] as HTMLElement;
+      if (svg == null) return;
+      html2canvas(svg, { foreignObjectRendering: false }).then(canvas => {
+        document.body.appendChild(canvas);
+        const dataURL = canvas.toDataURL('image/png');
+        const a = document.createElement('a');
+        const myEvt = new MouseEvent('click');
+        a.download = 'ac-avatar.png';
+        a.href = dataURL;
+        a.dispatchEvent(myEvt);
+        this.downloadText = 'Download Image';
+      });
+    }
+  }
+});
+</script>
+
+<style lang="scss" scoped>
+.viewer {
+  &__avatar {
+    border: 20px solid #fff;
+    border-radius: 20px;
+  }
+}
+</style>

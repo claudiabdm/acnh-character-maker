@@ -1,26 +1,42 @@
 {
+    "root": true,
     "env": {
+        "node": true,
         "browser": true,
         "es6": true
     },
     "extends": [
+        "plugin:vue/vue3-essential",
         "eslint:recommended",
-        "plugin:vue/essential",
-        "plugin:@typescript-eslint/eslint-recommended"
+        "@vue/typescript/recommended",
+        "@vue/prettier",
+        "@vue/prettier/@typescript-eslint"
     ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 2018,
-        "parser": "@typescript-eslint/parser",
-        "sourceType": "module"
+        "ecmaVersion": 2020
     },
     "plugins": [
         "vue",
         "@typescript-eslint"
     ],
     "rules": {
+        "vue/no-multiple-template-root": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true
+            },
+            {
+                "vueIndentScriptAndStyle": true
+            }
+        ],
+        "quotes": [
+            2,
+            "single"
+        ]
     }
 }

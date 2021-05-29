@@ -1,0 +1,44 @@
+// FONTS                        //
+// ---------------------------- //
+@font-face {
+  font-family: 'AcnhTitle'; 
+  font-display: swap;
+  src: url(~@/assets/font/FinkHeavy.ttf);
+  src: url(~@/assets/font/FinkHeavy.woff2);
+  src: url(~@/assets/font/FinkHeavy.woff);
+}
+@font-face {
+  font-family: 'AcnhDialog';
+  src: url(~@/assets/font/ArialRoundedBold.ttf);
+}
+
+.text-xs {
+	font-size: $text-xs;
+}
+.text-sm {
+	font-size: $text-sm;
+}
+.text-base {
+	font-size: $text-base;
+}
+.text-lg {
+	font-size: $text-lg;
+}
+.text-xl {
+	font-size: $text-xl;
+}
+.text-2xl {
+	font-size: $text-2xl;
+}
+.text-3xl {
+	font-size: $text-3xl;
+}
+.text-4xl {
+	font-size: $text-4xl;
+}
+.text-5xl {
+	font-size: $text-5xl;
+}
+.text-6xl {
+	font-size: $text-6xl;
+}

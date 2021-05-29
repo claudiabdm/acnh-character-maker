@@ -55,6 +55,11 @@ input:not([type='checkbox']) {
   outline: none;
 }
 
+button {
+	background: none;
+	border: none;
+}
+
 textarea {
   -webkit-appearance: none;
 }
