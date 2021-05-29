@@ -110,7 +110,6 @@ export default defineComponent({
     changeCurrentEyes(eyes: string): void {
       if (eyes) {
         this.$router.replace({
-          name: 'home',
           query: { ...this.$route.query, eyes }
         });
       }
@@ -118,7 +117,6 @@ export default defineComponent({
     changeCurrentEyesColor(eyesColor: string): void {
       if (eyesColor) {
         this.$router.replace({
-          name: 'home',
           query: { ...this.$route.query, eyesColor }
         });
       }

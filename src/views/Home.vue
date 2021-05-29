@@ -17,15 +17,15 @@ export default defineComponent({
     };
   },
   mounted() {
-    if (!this.$route.query.skin) {
+    if (this.$route.query) {
       this.$router.push({
-        name: 'home',
+        name: 'skin',
         query: {
           skin: 'ffe6cf',
-          hair: 'smooth',
-          hairColor: '403c33',
-          eyes: 'sleepy',
-          eyesColor: '403c33'
+          hair: 'diva',
+          hairColor: '5c3b36',
+          eyes: 'sparkly',
+          eyesColor: '5c3b36'
         }
       });
     }

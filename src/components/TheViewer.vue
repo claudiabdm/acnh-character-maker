@@ -11,7 +11,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import html2canvas from 'html2canvas';
 import TheCharacter from '@/components/TheCharacter.vue';
 
 export default defineComponent({
@@ -28,15 +27,18 @@ export default defineComponent({
         'viewer__avatar'
       )[0] as HTMLElement;
       if (svg == null) return;
-      html2canvas(svg, { foreignObjectRendering: false }).then(canvas => {
-        document.body.appendChild(canvas);
-        const dataURL = canvas.toDataURL('image/png');
-        const a = document.createElement('a');
-        const myEvt = new MouseEvent('click');
-        a.download = 'ac-avatar.png';
-        a.href = dataURL;
-        a.dispatchEvent(myEvt);
-        this.downloadText = 'Download Image';
+      import('html2canvas').then(module => {
+        const html2canvas = module.default;
+        html2canvas(svg, { foreignObjectRendering: false }).then(canvas => {
+          document.body.appendChild(canvas);
+          const dataURL = canvas.toDataURL('image/png');
+          const a = document.createElement('a');
+          const myEvt = new MouseEvent('click');
+          a.download = 'ac-avatar.png';
+          a.href = dataURL;
+          a.dispatchEvent(myEvt);
+          this.downloadText = 'Download Image';
+        });
       });
     }
   }

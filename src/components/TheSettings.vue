@@ -1,9 +1,9 @@
 <template>
   <section class="settings">
     <div class="settings__buttons">
-      <button
-        @click="changeCurrentTabComponent(icon)"
+      <router-link
         v-for="icon in icons"
+        :to="{ path: icon, query: { ...$route.query } }"
         :key="icon"
         type="button"
         class="btn settings__btn"
@@ -11,40 +11,27 @@
         <svg class="settings__btn-svg">
           <use :href="iconPath(icon)" />
         </svg>
-      </button>
+      </router-link>
     </div>
     <div class="settings__options">
-      <keep-alive>
+      <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
-          <component :is="currentTabComponent"></component>
+          <component :is="Component" />
         </transition>
-      </keep-alive>
+      </router-view>
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import SettingsSkin from '@/components/SettingsSkin.vue';
-import SettingsHair from './SettingsHair.vue';
-import SettingsEyes from './SettingsEyes.vue';
-
 export default defineComponent({
-  components: {
-    skin: SettingsSkin,
-    hair: SettingsHair,
-    eyes: SettingsEyes
-  },
   data() {
     return {
-      currentTabComponent: 'skin',
       icons: ['skin', 'hair', 'eyes']
     };
   },
   methods: {
-    changeCurrentTabComponent(buttonName: string) {
-      this.currentTabComponent = buttonName;
-    },
     iconPath(icon: string): string {
       return require('@/assets/icons.svg') + '#' + icon;
     }

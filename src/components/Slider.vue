@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <button
-      v-if="isPrevVisible"
+      v-show="isPrevVisible"
       class="slider__btn slider__btn--prev"
       type="button"
       @mousedown="onPrev()"
@@ -32,7 +32,7 @@
       </ul>
     </div>
     <button
-      v-if="isNextVisible"
+      v-show="isNextVisible"
       class="slider__btn slider__btn--next"
       type="button"
       @mousedown="onNext()"
@@ -70,7 +70,8 @@ export default defineComponent({
       interval: 0,
       position: 0,
       isPrevVisible: false,
-      isNextVisible: true
+      isNextVisible: true,
+      offset: 100
     };
   },
   mounted() {
@@ -86,7 +87,7 @@ export default defineComponent({
             this.sliderScrollEl.scrollLeft + this.sliderScrollEl.clientWidth;
           if (scrollPosition < this.sliderScrollEl.scrollWidth) {
             this.sliderScrollEl.scrollBy({
-              left: 100,
+              left: this.offset,
               behavior: 'smooth'
             });
           }
@@ -100,7 +101,7 @@ export default defineComponent({
             this.sliderScrollEl.scrollLeft + this.sliderScrollEl.clientWidth;
           if (scrollPosition > 0) {
             this.sliderScrollEl.scrollBy({
-              left: -100,
+              left: -this.offset,
               behavior: 'smooth'
             });
           }
@@ -113,10 +114,13 @@ export default defineComponent({
     },
     setButtonVisibility(e: Event): void {
       const el = e.target as Element;
-      if (el.scrollLeft === 0) {
+      if (el.scrollLeft < this.offset) {
         this.isPrevVisible = false;
         this.isNextVisible = true;
-      } else if (el.scrollWidth === el.scrollLeft + el.clientWidth) {
+      } else if (
+        el.scrollWidth <
+        el.scrollLeft + el.clientWidth + this.offset
+      ) {
         this.isPrevVisible = true;
         this.isNextVisible = false;
       } else {

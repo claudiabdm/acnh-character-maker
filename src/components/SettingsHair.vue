@@ -108,7 +108,6 @@ export default defineComponent({
     changeCurrentHair(hair: string): void {
       if (hair) {
         this.$router.replace({
-          name: 'home',
           query: { ...this.$route.query, hair }
         });
       }
@@ -116,7 +115,6 @@ export default defineComponent({
     changeCurrentHairColor(hairColor: string): void {
       if (hairColor) {
         this.$router.replace({
-          name: 'home',
           query: { ...this.$route.query, hairColor }
         });
       }

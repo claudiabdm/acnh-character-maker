@@ -36,7 +36,6 @@ export default defineComponent({
   methods: {
     changeSkinColor(skin: string): void {
       this.$router.replace({
-        name: 'home',
         query: { ...this.$route.query, skin }
       });
     }

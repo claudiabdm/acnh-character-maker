@@ -6,7 +6,24 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'home',
     component: Home,
-    props: true
+    props: true,
+    children: [
+      {
+        path: 'skin',
+        name: 'skin',
+        component: () => import('../components/SettingsSkin.vue')
+      },
+      {
+        path: 'hair',
+        name: 'hair',
+        component: () => import('../components/SettingsHair.vue')
+      },
+      {
+        path: 'eyes',
+        name: 'eyes',
+        component: () => import('../components/SettingsEyes.vue')
+      }
+    ]
   }
 ];
 
