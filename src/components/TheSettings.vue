@@ -42,7 +42,14 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/styles/global/_variables.scss';
 @import '@/styles/mixins/_mixins.scss';
+
 .settings {
+  @include size(100%, 100%);
+  padding: $padding-s;
+  background-color: var(--primary-100);
+  @media screen and (min-width: $break-tablet) {
+    padding: $padding 0;
+  }
   overflow-x: hidden;
   &__buttons {
     @include size(100%, auto);

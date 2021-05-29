@@ -1583,8 +1583,11 @@ export default defineComponent({
 
 .character {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  border: rem(20px) solid #fff;
+  border-radius: rem(20px);
   background-color: #fff;
+  overflow: hidden;
   &__clothes {
     position: absolute;
     width: (214px / 297px) * 100%;

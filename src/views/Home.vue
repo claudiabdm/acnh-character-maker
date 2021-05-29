@@ -37,20 +37,6 @@ export default defineComponent({
 @import '@/styles/global/_variables.scss';
 @import '@/styles/mixins/_mixins.scss';
 
-.viewer {
-  @include flex(center, center, column);
-  margin: 10vw;
-}
-
-.settings {
-  @include size(100%, 100%);
-  padding: $padding-s;
-  background-color: var(--primary-100);
-  @media screen and (min-width: $break-tablet) {
-    padding: $padding 0;
-  }
-}
-
 .btn {
   width: rem(300px);
   margin: 20px;

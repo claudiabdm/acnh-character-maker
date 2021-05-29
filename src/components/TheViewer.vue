@@ -46,10 +46,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/global/_variables.scss';
+@import '@/styles/mixins/_mixins.scss';
+
 .viewer {
-  &__avatar {
-    border: 20px solid #fff;
-    border-radius: 20px;
-  }
+  @include flex(center, center, column);
+  margin: 10vw;
 }
 </style>
