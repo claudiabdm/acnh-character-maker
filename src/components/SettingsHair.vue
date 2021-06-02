@@ -1,6 +1,6 @@
 <template>
   <div class="hairs">
-    <Slider>
+    <Slider class="hairs__slider">
       <li
         class="hairs__hair"
         v-for="hair in hairs"
@@ -45,9 +45,9 @@
       </li>
     </Slider>
     <ColorSelector
+      class="hairs__colors"
       :colors="colors"
       :selectedColor="currentHairColor"
-      :flexLayout="true"
       colorWidth="100%"
       @skinColorChanged="changeCurrentHairColor"
     />
@@ -130,11 +130,6 @@ export default defineComponent({
 @import '@/styles/global/_variables.scss';
 @import '@/styles/mixins/_mixins.scss';
 .hairs {
-  // display: grid;
-  // grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows: repeat(2, 1fr);
-  // justify-items: center;
-  // @include size(100%, auto);
   &__hair {
     position: relative;
     &:hover {
@@ -143,7 +138,7 @@ export default defineComponent({
   }
 
   &__svg {
-    width: rem(100px);
+    width: 12vh;
     &:hover {
       cursor: pointer;
       stroke: var(--secondary-100);

@@ -147,18 +147,12 @@ export default defineComponent({
   }
 
   &__slides {
-    width: rem(2000px);
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
-    column-gap: rem(100px);
-  }
-
-  &__slide {
-    &--hidden {
-      display: none;
-    }
+    align-items: center;
+    column-gap: 10%;
   }
 
   &__btn {

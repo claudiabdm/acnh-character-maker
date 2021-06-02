@@ -45,16 +45,14 @@ export default defineComponent({
 
 .settings {
   @include size(100%, 100%);
-  padding: $padding-s;
   background-color: var(--primary-100);
-  @media screen and (min-width: $break-tablet) {
-    padding: $padding 0;
-  }
-  overflow-x: hidden;
+  overflow: hidden;
+
   &__buttons {
     @include size(100%, auto);
     @include flex(center, center);
     flex-wrap: wrap;
+    padding: $padding-s;
   }
 
   &__btn {
