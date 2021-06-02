@@ -17,18 +17,16 @@ export default defineComponent({
     };
   },
   mounted() {
-    if (this.$route.query) {
-      this.$router.push({
-        name: 'skin',
-        query: {
-          skin: 'ffe6cf',
-          hair: 'diva',
-          hairColor: '5c3b36',
-          eyes: 'sparkly',
-          eyesColor: '5c3b36'
-        }
-      });
-    }
+    this.$router.push({
+      name: 'skin',
+      query: {
+        skin: this.$route.query.skin || 'ffe6cf',
+        hair: this.$route.query.hair || 'diva',
+        hairColor: this.$route.query.hairColor || '5c3b36',
+        eyes: this.$route.query.eyes || 'sparkly',
+        eyesColor: this.$route.query.eyesColor || '5c3b36'
+      }
+    });
   }
 });
 </script>
