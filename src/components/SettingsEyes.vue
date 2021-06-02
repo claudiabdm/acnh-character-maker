@@ -48,7 +48,6 @@
     <ColorSelector
       :colors="colors"
       :selectedColor="currentEyesColor"
-      :flexLayout="true"
       colorWidth="100%"
       @skinColorChanged="changeCurrentEyesColor"
     />
@@ -64,16 +63,7 @@ export default defineComponent({
   components: { ColorSelector, Slider },
   data() {
     return {
-      colors: [
-        '#403c33',
-        '#5c3b36',
-        '#834042',
-        '#c55139',
-        '#f3cd53',
-        '#d1c888',
-        '#948f90',
-        '#cfc9bc'
-      ],
+      colors: ['#4e4848', '#8c501d', '#275976', '#3a5c3e', '#bab4b4'],
       eyes: [
         'zzzlashes',
         'oval',
