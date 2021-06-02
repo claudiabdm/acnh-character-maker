@@ -1,5 +1,5 @@
 <template>
-  <div :class="['colors', { 'colors--flex': flexLayout }]">
+  <div class="colors">
     <svg
       v-for="color in colors"
       :key="color"
@@ -93,18 +93,10 @@ export default defineComponent({
 .colors {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  @media screen and (min-width: $break-tablet) {
-    margin-top: $padding;
-    padding: 0 50px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  &--flex {
-    @media screen and (min-width: $break-tablet) {
-      @include flex(center, center);
-    }
+  grid-template-rows: repeat(2, minmax(rem(100px), 12vh));
+  align-items: center;
+  @media screen and (min-width: 1024px) {
+    padding: 50px;
   }
 
   &__color {
