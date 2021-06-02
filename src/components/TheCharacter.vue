@@ -8,6 +8,7 @@
       viewBox="0 0 297 297"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      transform="scale(-1, 1)"
     >
       <rect width="297" height="297" :fill="color" ry="10"></rect>
       <g id="Character">
@@ -1593,7 +1594,7 @@ export default defineComponent({
     width: (214px / 297px) * 100%;
     height: (163px / 297px) * 100%;
     top: (190px / 297px) * 100%;
-    right: (40px / 297px) * 100%;
+    right: (44px / 297px) * 100%;
     z-index: 0;
   }
 }
