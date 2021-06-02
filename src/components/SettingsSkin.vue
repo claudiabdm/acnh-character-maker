@@ -1,11 +1,9 @@
 <template>
-  <div class="colors">
-    <ColorSelector
-      :colors="colors"
-      :selectedColor="skinColor"
-      @skinColorChanged="changeSkinColor"
-    />
-  </div>
+  <ColorSelector
+    :colors="colors"
+    :selectedColor="skinColor"
+    @skinColorChanged="changeSkinColor"
+  />
 </template>
 
 <script lang="ts">
