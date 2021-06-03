@@ -27,8 +27,54 @@
       </svg>
     </button>
     <div class="slider__scroll" ref="sliderScroll">
-      <ul class="slider__slides">
-        <slot></slot>
+      <ul class="slider__elem-list">
+        <li
+          class="slider__elem"
+          v-for="elem in elemList"
+          :key="elem"
+          @click="changeCurrentElem(elem)"
+        >
+          <button
+            type="button"
+            :class="[
+              'slider__elem-btn',
+              { 'slider__elem-btn--selected': currentElem === elem }
+            ]"
+          >
+            <svg
+              class="slider__elem-svg"
+              :fill="currentElemColor"
+              :stroke="currentElemColor"
+            >
+              <use :href="elemPath(elem)" />
+            </svg>
+          </button>
+          <svg class="slider__elem-selected" viewBox="0 0 65 65">
+            <g :visibility="currentElem === elem ? 'visible' : 'hidden'">
+              <ellipse fill="#49dbc6" cx="32" cy="32" rx="30" ry="30" />
+              <rect
+                x="36"
+                y="35"
+                width="20"
+                height="6"
+                rx="0"
+                ry="0"
+                fill="#fff"
+                transform="rotate(40, 26 10)"
+              />
+              <rect
+                x="0"
+                y="34"
+                width="32"
+                height="6"
+                rx="0"
+                ry="0"
+                fill="#fff"
+                transform="rotate(-50, 26 10)"
+              />
+            </g>
+          </svg>
+        </li>
       </ul>
     </div>
     <button
@@ -79,6 +125,24 @@ export default defineComponent({
     this.sliderScrollEl = this.$refs.sliderScroll as Element;
     this.sliderScrollEl.addEventListener('scroll', this.setButtonVisibility);
   },
+  props: {
+    elemList: {
+      type: Array,
+      default: () => [''] as string[]
+    },
+    elemType: {
+      type: String as () => 'hairs' | 'eyes',
+      default: ''
+    },
+    currentElem: {
+      type: String,
+      default: ''
+    },
+    currentElemColor: {
+      type: String,
+      default: ''
+    }
+  },
   methods: {
     onNext(): void {
       if (!this.interval) {
@@ -127,6 +191,12 @@ export default defineComponent({
         this.isPrevVisible = true;
         this.isNextVisible = true;
       }
+    },
+    elemPath(elem: string): string {
+      return require(`@/assets/${this.elemType}.svg`) + '#' + elem;
+    },
+    changeCurrentElem(elem: string) {
+      this.$emit('elemSelected', elem);
     }
   }
 });
@@ -137,7 +207,7 @@ export default defineComponent({
 @import '@/styles/mixins/_mixins.scss';
 .slider {
   position: relative;
-  padding: 0 50px;
+  padding: 10px 50px;
 
   &__scroll {
     display: flex;
@@ -146,7 +216,7 @@ export default defineComponent({
     scrollbar-width: none;
   }
 
-  &__slides {
+  &__elem-list {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, 1fr);
@@ -172,6 +242,58 @@ export default defineComponent({
 
   &__btn-svg {
     color: var(--accent-200);
+  }
+
+  &__elem {
+    position: relative;
+  }
+
+  &__elem-btn {
+    @include flex(center, center);
+    position: relative;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      @include size(100%, 90%);
+      content: '';
+      position: absolute;
+      display: block;
+      border-radius: 30%;
+      border: rem(3px) solid transparent;
+      padding: 20px;
+      background-color: #fff;
+      opacity: 0.5;
+      z-index: 1;
+      pointer-events: all;
+    }
+
+    &--selected {
+      &::before {
+        border: rem(3px) solid var(--secondary-100);
+      }
+    }
+  }
+
+  &__elem-svg {
+    width: 12vh;
+    transition: color 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+    &:hover {
+      cursor: pointer;
+    }
+    z-index: 2;
+  }
+  &__elem-selected {
+    @include size(rem(26px));
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .slider__elem-btn:hover::before {
+    border-color: var(--secondary-100);
   }
 }
 </style>
