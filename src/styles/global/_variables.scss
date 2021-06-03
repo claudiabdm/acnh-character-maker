@@ -75,6 +75,6 @@ $break-tablet: 768px;
 
 // Transitions
 // ------------------------------------------
-$transition-color: color 0.15s ease-in-out;
+$transition-color: color 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
 $transition-bgc: background-color 0.15s ease-in-out;
 

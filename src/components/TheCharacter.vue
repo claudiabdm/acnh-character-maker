@@ -1595,8 +1595,9 @@ export default defineComponent({
   overflow: hidden;
 
   &__svg {
-    #Hairs {
-      transition: color 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+    #Hairs,
+    #Eyes {
+      transition: $transition-color;
     }
   }
   &__clothes {

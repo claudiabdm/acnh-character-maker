@@ -278,7 +278,7 @@ export default defineComponent({
 
   &__elem-svg {
     width: 12vh;
-    transition: color 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
+    transition: $transition-color;
     &:hover {
       cursor: pointer;
     }
