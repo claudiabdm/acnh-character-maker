@@ -28,7 +28,15 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   data() {
     return {
-      icons: ['skin', 'hair', 'eyes', 'nose-mouth', 'blush', 'background']
+      icons: [
+        'skin',
+        'hair',
+        'eyes',
+        'nose-mouth',
+        'blush',
+        'background',
+        'clothes'
+      ]
     };
   },
   methods: {
@@ -48,15 +56,21 @@ export default defineComponent({
   background-color: var(--primary-100);
   overflow: hidden;
 
+  &__options {
+    @media screen and (min-width: 1024px) {
+      height: calc(100% - 135px);
+    }
+  }
+
   &__buttons {
     @include size(100%, auto);
     @include flex(center, center);
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: $padding-s + 10px;
   }
 
   &__link {
-    @include size(rem(70px), rem(70px));
+    @include size(rem(60px), rem(60px));
     @include flex(center, center);
     position: relative;
     border-radius: 50%;

@@ -38,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'background',
         name: 'background',
         component: () => import('../views/SettingsBackground.vue')
+      },
+      {
+        path: 'clothes',
+        name: 'clothes',
+        component: () => import('../views/SettingsClothes.vue')
       }
     ]
   }

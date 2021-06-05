@@ -29,7 +29,11 @@ export default defineComponent({
       if (svg == null) return;
       import('html2canvas').then(module => {
         const html2canvas = module.default;
-        html2canvas(svg, { foreignObjectRendering: false }).then(canvas => {
+        html2canvas(svg, {
+          foreignObjectRendering: false,
+          allowTaint: true,
+          useCORS: true
+        }).then(canvas => {
           document.body.appendChild(canvas);
           const dataURL = canvas.toDataURL('image/png');
           const a = document.createElement('a');

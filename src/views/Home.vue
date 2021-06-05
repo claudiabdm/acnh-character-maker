@@ -27,7 +27,8 @@ export default defineComponent({
         nose: this.$route.query.nose || 'triangle',
         mouth: this.$route.query.mouth || 'laugh',
         blush: this.$route.query.blush || 'solid-pink',
-        background: this.$route.query.background || '5a5a5a'
+        background: this.$route.query.background || '5a5a5a',
+        clothes: this.$route.query.clothes || 'tee-6'
       }
     });
   }

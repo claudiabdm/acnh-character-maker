@@ -3,13 +3,17 @@
   <div class="character">
     <svg
       class="character__svg"
-      width="297"
-      height="297"
-      viewBox="0 0 297 297"
+      viewBox="0 0 300 300"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="297" height="297" :fill="backgroundColor" ry="10"></rect>
+      <rect
+        class="character__background"
+        width="300"
+        height="300"
+        :fill="backgroundColor"
+        ry="10"
+      ></rect>
       <g id="Character">
         <g id="Ears">
           <ellipse
@@ -1552,9 +1556,11 @@
     </svg>
     <img
       class="character__clothes"
-      src="@/assets/cupcake-dress-6.png"
-      width="213"
-      height="163"
+      :src="
+        `https://res.cloudinary.com/claudiabdm/image/upload/v1622909938/animal-crossing/${clothes}.png`
+      "
+      width="214"
+      height="169"
     />
   </div>
 </template>
@@ -1591,6 +1597,9 @@ export default defineComponent({
     },
     backgroundColor(): string {
       return `#${this.$route.query.background}`;
+    },
+    clothes(): string {
+      return `${this.$route.query.clothes}`;
     }
   }
 });
@@ -1608,6 +1617,7 @@ export default defineComponent({
   overflow: hidden;
 
   &__svg {
+    @include size(rem(300px), rem(300px));
     #Hairs,
     #Eyes {
       transition: $transition-color;
@@ -1615,11 +1625,15 @@ export default defineComponent({
   }
   &__clothes {
     position: absolute;
-    width: (214px / 297px) * 100%;
-    height: (163px / 297px) * 100%;
-    top: (190px / 297px) * 100%;
-    right: (40px / 297px) * 100%;
+    width: rem(214px);
+    height: rem(163px);
+    top: rem(190px);
+    right: rem(44px);
     z-index: 0;
+  }
+
+  &__background {
+    transition: $transition-color;
   }
 }
 </style>

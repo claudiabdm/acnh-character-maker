@@ -41,14 +41,26 @@
               { 'slider__elem-btn--selected': currentElem === elem }
             ]"
           >
-            <svg
-              viewBox="0 0 1 1"
-              class="slider__elem-svg"
-              :fill="currentElemColor"
-              :stroke="currentElemColor"
-            >
-              <use :href="elemPath(elem)" />
-            </svg>
+            <template v-if="elemType !== 'clothes'">
+              <svg
+                viewBox="0 0 1 1"
+                class="slider__elem-svg"
+                :fill="currentElemColor"
+                :stroke="currentElemColor"
+              >
+                <use :href="elemPath(elem)" />
+              </svg>
+            </template>
+            <template v-else>
+              <img
+                class="slider__elem-img"
+                :src="
+                  `https://res.cloudinary.com/claudiabdm/image/upload/v1622909938/animal-crossing/${elem}.png`
+                "
+                width="230"
+                height="169"
+              />
+            </template>
           </button>
           <svg
             :class="[
@@ -124,7 +136,7 @@ export default defineComponent({
       position: 0,
       isPrevVisible: false,
       isNextVisible: true,
-      offset: 100,
+      offset: 50,
       isRow: false
     };
   },
@@ -190,6 +202,7 @@ export default defineComponent({
     setButtonVisibility(e: Event): void {
       const el = e.target as Element;
       this.isRow = false;
+      console.log(el.scrollWidth, el.clientWidth, el.scrollLeft);
       if (el.scrollWidth - el.clientWidth <= 1) {
         this.isPrevVisible = false;
         this.isNextVisible = false;
@@ -309,6 +322,14 @@ export default defineComponent({
       &::before {
         border: rem(3px) solid var(--secondary-100);
       }
+    }
+  }
+
+  &__elem-img {
+    @include size(100%, 100%);
+    z-index: 2;
+    &:hover {
+      cursor: pointer;
     }
   }
 
