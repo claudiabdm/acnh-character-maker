@@ -1,5 +1,5 @@
 <template>
-  <div class="slider">
+  <div :class="['slider', { 'slider--row': isRow }]">
     <button
       v-show="isPrevVisible"
       class="slider__btn slider__btn--prev"
@@ -223,7 +223,12 @@ export default defineComponent({
 @import '@/styles/mixins/_mixins.scss';
 .slider {
   position: relative;
-  padding: 10px $padding-s;
+  padding: 10px 50px;
+
+  &--row {
+    padding-left: $padding-s;
+    padding-right: $padding-s;
+  }
 
   &__scroll {
     display: flex;
