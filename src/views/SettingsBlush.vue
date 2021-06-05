@@ -13,10 +13,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useMeta } from 'vue-meta';
 import Slider from '../components/SettingsSlider.vue';
 
 export default defineComponent({
   components: { Slider },
+  setup() {
+    useMeta({
+      title: 'Blush'
+    });
+  },
   data() {
     return {
       blushes: ['soft-coral', 'soft-pink', 'solid-coral', 'solid-pink'].sort(

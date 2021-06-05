@@ -26,10 +26,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useMeta } from 'vue-meta';
 import Slider from '../components/SettingsSlider.vue';
 
 export default defineComponent({
   components: { Slider },
+  setup() {
+    useMeta({
+      title: 'NoseMouth'
+    });
+  },
   data() {
     return {
       noses: ['nose-circle', 'nose-oval', 'rectangle', 'triangle'].sort(

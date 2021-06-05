@@ -1,4 +1,9 @@
 <template>
+  <metainfo>
+    <template v-slot:title="{ content }">{{
+      content ? `${content} | AC: Character Maker` : 'AC: Character Maker'
+    }}</template>
+  </metainfo>
   <main class="main">
     <router-view></router-view>
   </main>
@@ -6,9 +11,69 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useMeta } from 'vue-meta';
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  setup() {
+    const description =
+      'Create your animal crossing character! Built with Vue 3 by Claudia Benito (@claudiabdm). Character design by Ace S Chen.';
+    const title = 'AC: Character Maker';
+    const image =
+      'https://res.cloudinary.com/claudiabdm/image/upload/v1622931480/animal-crossing/logo-preview.png';
+    useMeta({
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: image
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: image
+        },
+        {
+          hid: 'mobile-web-app-capable',
+          name: 'mobile-web-app-capable',
+          content: title
+        },
+        {
+          hid: 'apple-mobile-web-app-title',
+          name: 'apple-mobile-web-app-title',
+          content: title
+        }
+      ],
+      htmlAttrs: {
+        lang: 'en'
+      }
+    });
+  }
 });
 </script>
 

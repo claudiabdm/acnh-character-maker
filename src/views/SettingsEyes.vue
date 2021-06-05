@@ -17,11 +17,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useMeta } from 'vue-meta';
 import ColorSelector from '../components/ColorSelector.vue';
 import Slider from '../components/SettingsSlider.vue';
 
 export default defineComponent({
   components: { ColorSelector, Slider },
+  setup() {
+    useMeta({
+      title: 'Eyes'
+    });
+  },
   data() {
     return {
       colors: ['#4e4848', '#8c501d', '#275976', '#3a5c3e', '#bab4b4'],

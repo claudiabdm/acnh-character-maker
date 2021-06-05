@@ -7,10 +7,16 @@
 import { defineComponent } from 'vue';
 import TheViewer from '@/components/TheViewer.vue';
 import TheSettings from '@/components/TheSettings.vue';
+import { useMeta } from 'vue-meta';
 
 export default defineComponent({
   name: 'Home',
   components: { TheViewer, TheSettings },
+  setup() {
+    useMeta({
+      title: 'Home'
+    });
+  },
   data() {
     return {
       downloadText: 'Download Image'

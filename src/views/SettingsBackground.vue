@@ -8,10 +8,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useMeta } from 'vue-meta';
 import ColorSelector from '../components/ColorSelector.vue';
 
 export default defineComponent({
   components: { ColorSelector },
+  setup() {
+    useMeta({
+      title: 'Background'
+    });
+  },
   data() {
     return {
       colors: [

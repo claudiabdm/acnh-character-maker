@@ -7,7 +7,7 @@
       {{ downloadText }}
     </button>
     <p class="viewer__credit">
-      Character desing by
+      Character design by
       <a
         class="viewer__credit-link"
         href="https://www.figma.com/community/file/834210307944210537/Animal-Crossing-Character-Maker"

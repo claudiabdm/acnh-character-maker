@@ -67,10 +67,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-// import Slider from '../components/SettingsSlider.vue';
+import { useMeta } from 'vue-meta';
 
 export default defineComponent({
-  // components: { Slider },
+  setup() {
+    useMeta({
+      title: 'Clothes'
+    });
+  },
   data() {
     return {
       clothes: [],
