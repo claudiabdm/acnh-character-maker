@@ -202,7 +202,6 @@ export default defineComponent({
     setButtonVisibility(e: Event): void {
       const el = e.target as Element;
       this.isRow = false;
-      console.log(el.scrollWidth, el.clientWidth, el.scrollLeft);
       if (el.scrollWidth - el.clientWidth <= 1) {
         this.isPrevVisible = false;
         this.isNextVisible = false;
