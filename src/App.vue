@@ -14,6 +14,9 @@ export default defineComponent({
 
 <style lang="scss">
 @import '@/styles/styles.scss';
+html {
+  background-color: var(--primary-100);
+}
 #app {
   @include size(100%, 100%);
   background-image: url('~@/assets/newhorizons_wallpaper_CharEditor.png');
