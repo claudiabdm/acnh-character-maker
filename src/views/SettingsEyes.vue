@@ -30,7 +30,14 @@ export default defineComponent({
   },
   data() {
     return {
-      colors: ['#4e4848', '#8c501d', '#275976', '#3a5c3e', '#bab4b4'],
+      colors: [
+        '#4e4848',
+        '#5c3b36',
+        '#8c501d',
+        '#275976',
+        '#3a5c3e',
+        '#bab4b4'
+      ],
       eyes: [
         'zzzlashes',
         'eyes-oval',
