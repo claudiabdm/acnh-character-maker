@@ -3,6 +3,8 @@
   <div class="character">
     <svg
       class="character__svg"
+      width="300"
+      height="300"
       viewBox="0 0 300 300"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1617,7 +1619,6 @@ export default defineComponent({
   overflow: hidden;
 
   &__svg {
-    @include size(rem(300px), rem(300px));
     #Hairs,
     #Eyes {
       transition: $transition-color;

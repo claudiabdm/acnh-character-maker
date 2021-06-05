@@ -6,6 +6,15 @@
     <button class="btn" type="button" @click="downloadSVGAsPNG">
       {{ downloadText }}
     </button>
+    <p class="viewer__credit">
+      Character desing by
+      <a
+        class="viewer__credit-link"
+        href="https://www.figma.com/community/file/834210307944210537/Animal-Crossing-Character-Maker"
+      >
+        Ace S Chen
+      </a>
+    </p>
   </section>
 </template>
 
@@ -56,5 +65,12 @@ export default defineComponent({
 .viewer {
   @include flex(center, center, column);
   margin: 10vw;
+  &__credit {
+    color: var(--accent-200);
+    font-size: rem(14px);
+  }
+  &__credit-link {
+    color: var(--accent-200);
+  }
 }
 </style>
