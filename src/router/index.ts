@@ -12,32 +12,32 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'skin',
         name: 'skin',
-        component: () => import('../components/SettingsSkin.vue')
+        component: () => import('../views/SettingsSkin.vue')
       },
       {
         path: 'hair',
         name: 'hair',
-        component: () => import('../components/SettingsHair.vue')
+        component: () => import('../views/SettingsHair.vue')
       },
       {
         path: 'eyes',
         name: 'eyes',
-        component: () => import('../components/SettingsEyes.vue')
+        component: () => import('../views/SettingsEyes.vue')
       },
       {
         path: 'nose-mouth',
         name: 'nose-mouth',
-        component: () => import('../components/SettingsNoseMouth.vue')
+        component: () => import('../views/SettingsNoseMouth.vue')
       },
       {
         path: 'blush',
         name: 'blush',
-        component: () => import('../components/SettingsBlush.vue')
+        component: () => import('../views/SettingsBlush.vue')
       },
       {
         path: 'background',
         name: 'background',
-        component: () => import('../components/SettingsBackground.vue')
+        component: () => import('../views/SettingsBackground.vue')
       }
     ]
   }

@@ -17,8 +17,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ColorSelector from './ColorSelector.vue';
-import Slider from './SettingsSlider.vue';
+import ColorSelector from '../components/ColorSelector.vue';
+import Slider from '../components/SettingsSlider.vue';
 
 export default defineComponent({
   components: { ColorSelector, Slider },

@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Slider from './SettingsSlider.vue';
+import Slider from '../components/SettingsSlider.vue';
 
 export default defineComponent({
   components: { Slider },

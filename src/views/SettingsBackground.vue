@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ColorSelector from './ColorSelector.vue';
+import ColorSelector from '../components/ColorSelector.vue';
 
 export default defineComponent({
   components: { ColorSelector },
