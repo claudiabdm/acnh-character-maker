@@ -2,7 +2,7 @@
   <ColorSelector
     :colors="colors"
     :selectedColor="skinColor"
-    @skinColorChanged="changeSkinColor"
+    @colorChanged="changeSkinColor"
   />
 </template>
 

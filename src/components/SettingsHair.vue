@@ -11,8 +11,7 @@
       class="hairs__colors"
       :colors="colors"
       :selectedColor="currentHairColor"
-      colorWidth="100%"
-      @skinColorChanged="changeCurrentHairColor"
+      @colorChanged="changeCurrentHairColor"
     />
   </div>
 </template>

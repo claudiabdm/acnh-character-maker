@@ -10,8 +10,7 @@
     <ColorSelector
       :colors="colors"
       :selectedColor="currentEyesColor"
-      colorWidth="100%"
-      @skinColorChanged="changeCurrentEyesColor"
+      @colorChanged="changeCurrentEyesColor"
     />
   </div>
 </template>

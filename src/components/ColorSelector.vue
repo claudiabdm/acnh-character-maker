@@ -1,52 +1,55 @@
 <template>
   <div class="colors">
-    <svg
-      v-for="color in colors"
-      :key="color"
-      @click="changeColor(color)"
-      :width="colorWidth"
-      :height="colorWidth"
-      :class="[
-        'colors__color',
-        { 'colors__color--selected': currentColor === color }
-      ]"
-      viewBox="0 0 135.47 135.47"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        transform="matrix(.15743 0 0 .15743 24.446 11.864)"
-        stroke="transparent"
-        stroke-width="1.0488"
-        :fill="color"
-        d="m267.66 57.85a218.13 146.53 0 0 0-218.13 146.53 218.13 146.53 0 0 0 4.9668 31.086 218.13 146.53 0 0 0-28.277 72.152 218.13 146.53 0 0 0 218.13 146.53 218.13 146.53 0 0 0 218.13-146.53 218.13 146.53 0 0 0-4.9668-31.086 218.13 146.53 0 0 0 28.277-72.152 218.13 146.53 0 0 0-218.13-146.53z"
-      />
-      <g
-        transform="rotate(5, 90 25)"
-        :visibility="currentColor === color ? 'visible' : 'hidden'"
+    <div class="colors__color-wrapper" v-for="color in colors" :key="color">
+      <svg
+        @click="changeColor(color)"
+        :class="[
+          'colors__color',
+          { 'colors__color--selected': currentColor === color }
+        ]"
+        viewBox="0 0 85 85"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <ellipse fill="#49dbc6" cx="90" cy="25" rx="10" ry="10" />
+        <path
+          transform="matrix(.15743 0 0 .15743 0 0)"
+          stroke="transparent"
+          stroke-width="1.0488"
+          :fill="color"
+          d="m267.66 57.85a218.13 146.53 0 0 0-218.13 146.53 218.13 146.53 0 0 0 4.9668 31.086 218.13 146.53 0 0 0-28.277 72.152 218.13 146.53 0 0 0 218.13 146.53 218.13 146.53 0 0 0 218.13-146.53 218.13 146.53 0 0 0-4.9668-31.086 218.13 146.53 0 0 0 28.277-72.152 218.13 146.53 0 0 0-218.13-146.53z"
+        />
+      </svg>
+      <svg
+        :class="[
+          'colors__color-selected',
+          {
+            'colors__color-selected--active': currentColor === color
+          }
+        ]"
+        viewBox="0 0 65 65"
+      >
+        <ellipse fill="#49dbc6" cx="32" cy="32" rx="30" ry="30" />
         <rect
-          x="84"
-          y="28"
-          width="6"
-          height="2"
+          x="36"
+          y="35"
+          width="20"
+          height="6"
           rx="0"
           ry="0"
           fill="#fff"
-          transform="rotate(40, 88 30)"
+          transform="rotate(40, 26 10)"
         />
         <rect
-          x="88"
-          y="30"
-          width="12"
-          height="2"
+          x="0"
+          y="34"
+          width="32"
+          height="6"
           rx="0"
           ry="0"
           fill="#fff"
-          transform="rotate(-50, 88 30)"
+          transform="rotate(-50, 26 10)"
         />
-      </g>
-    </svg>
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -54,7 +57,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  emits: ['skinColorChanged'],
+  emits: ['colorChanged'],
   props: {
     colors: {
       type: Array,
@@ -63,14 +66,6 @@ export default defineComponent({
     selectedColor: {
       type: String,
       default: '#fff'
-    },
-    colorWidth: {
-      type: String,
-      default: '100%'
-    },
-    flexLayout: {
-      type: Boolean,
-      default: false
     }
   },
   computed: {
@@ -80,7 +75,7 @@ export default defineComponent({
   },
   methods: {
     changeColor(color: string) {
-      this.$emit('skinColorChanged', color.slice(1));
+      this.$emit('colorChanged', color.slice(1));
     }
   }
 });
@@ -93,13 +88,18 @@ export default defineComponent({
 .colors {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, minmax(rem(100px), 12vh));
+  grid-auto-rows: auto;
   align-items: center;
+  justify-items: center;
   @media screen and (min-width: 1024px) {
     padding: 0 50px;
   }
-
+  &__color-wrapper {
+    position: relative;
+  }
   &__color {
+    width: rem(85px);
+    max-width: rem(85px);
     &:hover {
       cursor: pointer;
     }
@@ -109,6 +109,21 @@ export default defineComponent({
         stroke: var(--secondary-100);
         stroke-width: 20;
       }
+      .colors__color-selected {
+        opacity: 1;
+      }
+    }
+  }
+  &__color-selected {
+    @include size(0);
+    position: absolute;
+    transform: translate3d(-26px, 0, 0);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s, width 0.15s ease-in-out, height 0.15s ease-in-out;
+    &--active {
+      @include size(rem(26px));
+      opacity: 1;
     }
   }
 }
