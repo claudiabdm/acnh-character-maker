@@ -42,6 +42,7 @@
             ]"
           >
             <svg
+              viewBox="0 0 1 1"
               class="slider__elem-svg"
               :fill="currentElemColor"
               :stroke="currentElemColor"
@@ -216,15 +217,6 @@ export default defineComponent({
     scrollbar-width: none;
   }
 
-  &__elem-list {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(2, 1fr);
-    justify-items: center;
-    align-items: center;
-    column-gap: 10%;
-  }
-
   &__btn {
     @include size(rem(50px), rem(50px));
     position: absolute;
@@ -244,29 +236,39 @@ export default defineComponent({
     color: var(--accent-200);
   }
 
+  &__elem-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    column-gap: 5%;
+  }
+
   &__elem {
+    @include size(rem(145px / 1.5), rem(160px / 1.5));
     position: relative;
+    @media screen and (min-width: 1024px) {
+      @include size(rem(145px), rem(160px));
+    }
   }
 
   &__elem-btn {
     @include flex(center, center);
     position: relative;
-    padding: 5px;
+    padding: 10px;
     align-items: center;
     justify-content: center;
-
     &::before {
-      @include size(100%, 90%);
+      @include size(100%, 100%);
       content: '';
       position: absolute;
       display: block;
       border-radius: 30%;
       border: rem(3px) solid transparent;
-      padding: 20px;
       background-color: #fff;
       opacity: 0.5;
       z-index: 1;
-      pointer-events: all;
     }
 
     &--selected {
@@ -277,13 +279,14 @@ export default defineComponent({
   }
 
   &__elem-svg {
-    width: 12vh;
+    width: 100%;
     transition: $transition-color;
+    z-index: 2;
     &:hover {
       cursor: pointer;
     }
-    z-index: 2;
   }
+
   &__elem-selected {
     @include size(rem(26px));
     position: absolute;
