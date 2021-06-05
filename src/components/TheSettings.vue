@@ -1,18 +1,18 @@
 <template>
   <section class="settings">
-    <div class="settings__buttons">
+    <nav class="settings__buttons" aria-label="Settings options">
       <router-link
         v-for="icon in icons"
         :to="{ path: icon, query: { ...$route.query } }"
         :key="icon"
-        type="button"
-        class="btn settings__btn"
+        :aria-label="icon === 'nose-mouth' ? icon.replace('-', ' / ') : icon"
+        class="settings__link"
       >
         <svg class="settings__btn-svg">
           <use :href="iconPath(icon)" />
         </svg>
       </router-link>
-    </div>
+    </nav>
     <div class="settings__options">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
@@ -28,7 +28,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   data() {
     return {
-      icons: ['skin', 'hair', 'eyes']
+      icons: ['skin', 'hair', 'eyes', 'nose-mouth', 'blush']
     };
   },
   methods: {
@@ -52,26 +52,53 @@ export default defineComponent({
     @include size(100%, auto);
     @include flex(center, center);
     flex-wrap: wrap;
-    padding: $padding-s;
+    padding: $padding-s + 10px;
   }
 
-  &__btn {
+  &__link {
     @include size(rem(70px), rem(70px));
     @include flex(center, center);
+    position: relative;
     border-radius: 50%;
-    background-color: var(--tertiary-100);
+    background-color: var(--tertiary-200);
     color: var(--base);
     font-size: 1rem;
     margin: 0;
     margin-left: -10px;
     padding: 0;
-    &:hover {
-      background-color: var(--tertiary-100);
+    &::before {
+      content: '';
+      @include size(0, 0);
+      opacity: 0;
+      position: absolute;
+      border-radius: rem(20px);
+      transform: translate3d(0, -100%, 0);
+      transition: transform 0.25s;
+      z-index: 1;
+    }
+    &--active {
+      transition: all 0.5s;
+      .settings__btn-svg {
+        color: var(--base);
+      }
+      &::before {
+        @include size(max-content, auto);
+        @include flex(center, center);
+        content: attr(aria-label);
+        background-color: var(--tertiary-100);
+        color: var(--tertiary-200);
+        padding: 5px 10px;
+        text-transform: capitalize;
+        transform: translate3d(0, -120%, 0);
+        opacity: 1;
+      }
     }
   }
 
   &__btn-svg {
     width: 50%;
+    color: var(--tertiary-100);
+    transition: color 0.15s;
   }
 }
 </style>

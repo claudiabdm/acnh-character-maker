@@ -38,7 +38,7 @@
           :fill="skinColor"
         />
         <g id="Blushes">
-          <g id="Blush / Solid Pink" opacity="0.7">
+          <g v-if="blush === 'solid-pink'" id="solid-pink" opacity="0.7">
             <ellipse
               id="left"
               cx="91.0798"
@@ -56,7 +56,12 @@
               fill="#FFBAA5"
             />
           </g>
-          <g id="Blush / Soft Pink" opacity="0.7" filter="url(#filter0_f)">
+          <g
+            v-if="blush === 'soft-pink'"
+            id="soft-pink"
+            opacity="0.7"
+            filter="url(#filter0_f)"
+          >
             <ellipse
               id="left_2"
               cx="91.0798"
@@ -74,7 +79,7 @@
               fill="#FFBAA5"
             />
           </g>
-          <g id="Blush / Solid Coral" opacity="0.7">
+          <g v-if="blush === 'solid-coral'" id="solid-coral" opacity="0.7">
             <ellipse
               id="left_3"
               cx="91.0798"
@@ -92,7 +97,12 @@
               fill="#FF7E36"
             />
           </g>
-          <g id="Blush / Soft Coral" opacity="0.7" filter="url(#filter1_f)">
+          <g
+            v-if="blush === 'soft-coral'"
+            id="soft-coral"
+            opacity="0.7"
+            filter="url(#filter1_f)"
+          >
             <ellipse
               id="left_4"
               cx="91.0798"
@@ -112,7 +122,7 @@
           </g>
         </g>
         <g id="Eyes" :fill="eyesColor" :stroke="eyesColor">
-          <g v-if="eyes === 'cat'" id="cat">
+          <g v-if="eyes === 'eyes-cat'" id="eyes-cat">
             <path
               id="Vector 5"
               d="M202.429 110.249C208.621 111.867 210.941 114.249 211.429 116.249C211.917 118.249 212.179 121.249 210.429 128.249C208.929 134.249 206.929 142.249 196.929 145.249C186.929 148.249 180.743 146.249 177.243 144.691C173.34 142.954 171.344 140.989 170.832 135.794C170.32 130.599 173.019 119.409 180.743 113.788C188.466 108.166 194.674 108.222 202.429 110.249Z"
@@ -940,7 +950,7 @@
               stroke-linecap="round"
             />
           </g>
-          <g v-if="eyes === 'circle'" id="circle">
+          <g v-if="eyes === 'eyes-circle'" id="circle">
             <circle
               id="Eye_17"
               cx="189.08"
@@ -1116,7 +1126,7 @@
               stroke-linecap="round"
             />
           </g>
-          <g v-if="eyes === 'oval'" id="oval">
+          <g v-if="eyes === 'eyes-oval'" id="eyes-oval">
             <path
               id="Eye_23"
               d="M208.58 126C208.58 138.262 199.744 148 189.08 148C178.415 148 169.58 138.262 169.58 126C169.58 113.738 178.415 104 189.08 104C199.744 104 208.58 113.738 208.58 126Z"
@@ -1321,29 +1331,22 @@
           </g>
         </g>
         <g id="Noses">
-          <g id="Nose / Triangle" clip-path="url(#clip0)">
-            <g id="Nose / Triangle_2">
-              <path
-                id="Polygon 1"
-                d="M152.583 126L161.243 148.5H143.923L152.583 126Z"
-                fill="#FF7E36"
-              />
-            </g>
-          </g>
-          <!-- <g id="Nose / Oval">
-            <g id="Nose / Oval_2">
-              <ellipse
-                id="Ellipse 17"
-                cx="152.583"
-                cy="139.5"
-                rx="9"
-                ry="5.5"
-                fill="#FF7E36"
-              />
-            </g>
-          </g>
+          <path
+            v-if="nose === 'triangle'"
+            clip-path="url(#clip0)"
+            d="M152.583 126L161.243 148.5H143.923L152.583 126Z"
+            fill="#FF7E36"
+          />
+          <ellipse
+            v-if="nose === 'nose-oval'"
+            cx="152.583"
+            cy="139.5"
+            rx="9"
+            ry="5.5"
+            fill="#FF7E36"
+          />
           <rect
-            id="Nose / Rectangle"
+            v-if="nose === 'rectangle'"
             x="144.083"
             y="135"
             width="17"
@@ -1351,17 +1354,13 @@
             rx="1"
             fill="#FF7E36"
           />
-          <g id="Nose / Circle">
-            <g id="Nose / Circle_2">
-              <circle
-                id="Ellipse 18"
-                cx="152.583"
-                cy="139"
-                r="7"
-                fill="#FF7E36"
-              />
-            </g>
-          </g> -->
+          <circle
+            v-if="nose === 'nose-circle'"
+            cx="152.583"
+            cy="139"
+            r="7"
+            fill="#FF7E36"
+          />
         </g>
         <path
           id="Body"
@@ -1394,7 +1393,7 @@
           <!-- <image href="@/assets/cupcake-dress-6.png" width="213" height="163" x="43.58" y="191"></image> -->
         </g>
         <g id="Mouths">
-          <g id="Mouth / Small Smile">
+          <g v-if="mouth === 'small'" id="small">
             <path
               id="Ellipse 19"
               d="M165 158C165 164.075 159.404 169 152.5 169C145.596 169 140 164.075 140 158"
@@ -1403,10 +1402,17 @@
               stroke-linecap="round"
             />
           </g>
-          <!-- <g id="Mouth / Surprise">
-            <ellipse id="Ellipse 28" cx="152.5" cy="163.5" rx="6.5" ry="7.5" />
+          <g v-if="mouth === 'surprise'" id="surprise">
+            <ellipse
+              id="Ellipse 28"
+              cx="152.5"
+              cy="163.5"
+              rx="6.5"
+              ry="7.5"
+              fill="#8C501D"
+            />
           </g>
-          <g id="Mouth / Kissy">
+          <g v-if="mouth === 'kissy'" id="kissy">
             <path
               id="Vector 37"
               d="M151 160.653C153 158.653 155.5 158.253 157.5 160.653C160 163.653 157 166.653 154 166.153C157.667 167.82 157.784 169.977 157 171.153C156 172.653 153 173.153 151 171.153"
@@ -1416,7 +1422,7 @@
               stroke-linejoin="round"
             />
           </g>
-          <g id="Mouth / Wide Smile">
+          <g v-if="mouth === 'wide'" id="wide">
             <path
               id="Ellipse 19_2"
               d="M172 158C172 164.075 163.493 169 153 169C142.507 169 134 164.075 134 158"
@@ -1425,7 +1431,7 @@
               stroke-linecap="round"
             />
           </g>
-          <g id="Mouth / Laugh">
+          <g v-if="mouth === 'laugh'" id="laugh">
             <path
               id="Ellipse 19_3"
               d="M153 170C163.493 170 172 164.075 172 158C172 158 160 160 153 160C146 160 133.5 158 133.5 158C133.5 164.075 142.507 170 153 170Z"
@@ -1437,7 +1443,7 @@
               stroke-linejoin="round"
             />
           </g>
-          <g id="Mouth / Drool">
+          <g v-if="mouth === 'droll'" id="droll">
             <path
               id="Ellipse 19_4"
               d="M151.34 160.837C155.84 160.837 160.34 159.337 165.34 159.337C173.34 161.837 169.507 167.67 165.34 168.837C166.84 172.837 164.34 176.337 161.84 175.337C159.34 174.337 160.84 170.337 159.34 168.837C158.065 167.562 143.34 170.337 138.84 167.837C134.34 165.337 135.84 159.837 138.84 158.337C141.84 156.837 146.84 160.837 151.34 160.837Z"
@@ -1449,9 +1455,9 @@
               stroke-linejoin="round"
             />
           </g>
-          <g id="Mouth / Cat Smile">
+          <g v-if="mouth === 'mouth-cat'" id="mouth-cat">
             <path
-              id="Mouth / Cat Smile_2"
+              id="cat_2"
               d="M127 158C129.333 160.667 135.4 166 141 166C146.6 166 151 162.667 152.5 161C154 162.667 158.4 166 164 166C169.6 166 175.667 160.667 178 158"
               stroke="#8C501D"
               stroke-width="3"
@@ -1459,7 +1465,7 @@
               stroke-linejoin="round"
             />
           </g>
-          <g id="Mouth / Bunny Smile">
+          <g v-if="mouth === 'bunny'" id="bunny">
             <path
               id="Ellipse 20"
               d="M172 160C172 163.314 163.493 166 153 166C142.507 166 134 163.314 134 160"
@@ -1476,7 +1482,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             />
-          </g> -->
+          </g>
         </g>
       </g>
       <defs>
@@ -1578,6 +1584,15 @@ export default defineComponent({
     },
     eyesColor(): string {
       return `#${this.$route.query.eyesColor}`;
+    },
+    nose(): string {
+      return `${this.$route.query.nose}`;
+    },
+    mouth(): string {
+      return `${this.$route.query.mouth}`;
+    },
+    blush(): string {
+      return `${this.$route.query.blush}`;
     }
   }
 });

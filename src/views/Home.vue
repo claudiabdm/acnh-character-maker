@@ -17,14 +17,17 @@ export default defineComponent({
     };
   },
   mounted() {
+    console.log(this.$route.name);
     this.$router.push({
-      name: 'skin',
       query: {
         skin: this.$route.query.skin || 'ffe6cf',
         hair: this.$route.query.hair || 'diva',
         hairColor: this.$route.query.hairColor || '5c3b36',
         eyes: this.$route.query.eyes || 'sparkly',
-        eyesColor: this.$route.query.eyesColor || '5c3b36'
+        eyesColor: this.$route.query.eyesColor || '5c3b36',
+        nose: this.$route.query.nose || 'triangle',
+        mouth: this.$route.query.mouth || 'laugh',
+        blush: this.$route.query.blush || 'solid-pink'
       }
     });
   }

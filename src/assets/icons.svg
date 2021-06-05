@@ -10,9 +10,21 @@
     </path>
   </symbol>
   <symbol id="eyes" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-      <path fill-rule="evenodd"
-        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-        clip-rule="evenodd"></path>
+    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+    <path fill-rule="evenodd"
+      d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+      clip-rule="evenodd"></path>
   </symbol>
+  <symbol id="nose-mouth" viewBox="0 0 65 59" fill="currentColor">
+    <path id="Ellipse 19"
+      d="M33 47C43.4934 47 52 41.0751 52 35C52 35 40 37 33 37C26 37 13.5 35 13.5 35C13.5 41.0751 22.5066 47 33 47Z"
+      fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Polygon 1" d="M33 3L41.6603 25.5H24.3397L33 3Z" fill="currentColor" />
+  </symbol>
+
+  <symbol id="blush" viewBox="0 0 24 24" fill="currentColor">
+    <path
+      d="M7 16c.55 0 1 .45 1 1 0 1.1-.9 2-2 2-.17 0-.33-.02-.5-.05.31-.55.5-1.21.5-1.95 0-.55.45-1 1-1M18.67 3c-.26 0-.51.1-.71.29L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.02 0-1.41l-1.34-1.34c-.2-.2-.45-.29-.7-.29zM7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3z" />
+  </symbol>
+
 </svg>

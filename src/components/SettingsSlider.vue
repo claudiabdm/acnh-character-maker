@@ -27,7 +27,7 @@
       </svg>
     </button>
     <div class="slider__scroll" ref="sliderScroll">
-      <ul class="slider__elem-list">
+      <ul :class="['slider__elem-list', { 'slider__elem-list--row': isRow }]">
         <li
           class="slider__elem"
           v-for="elem in elemList"
@@ -118,12 +118,16 @@ export default defineComponent({
       position: 0,
       isPrevVisible: false,
       isNextVisible: true,
-      offset: 100
+      offset: 100,
+      isRow: false
     };
   },
   mounted() {
     this.$nextTick();
     this.sliderScrollEl = this.$refs.sliderScroll as Element;
+    this.setButtonVisibility(({
+      target: this.sliderScrollEl
+    } as unknown) as Event);
     this.sliderScrollEl.addEventListener('scroll', this.setButtonVisibility);
   },
   props: {
@@ -179,7 +183,12 @@ export default defineComponent({
     },
     setButtonVisibility(e: Event): void {
       const el = e.target as Element;
-      if (el.scrollLeft < this.offset) {
+      this.isRow = false;
+      if (el.scrollWidth === el.clientWidth) {
+        this.isPrevVisible = false;
+        this.isNextVisible = false;
+        this.isRow = true;
+      } else if (el.scrollLeft < this.offset) {
         this.isPrevVisible = false;
         this.isNextVisible = true;
       } else if (
@@ -194,7 +203,7 @@ export default defineComponent({
       }
     },
     elemPath(elem: string): string {
-      return require(`@/assets/${this.elemType}.svg`) + '#' + elem;
+      return require('@/assets/settings-sprite.svg') + '#' + elem;
     },
     changeCurrentElem(elem: string) {
       this.$emit('elemSelected', elem);
@@ -213,6 +222,7 @@ export default defineComponent({
   &__scroll {
     display: flex;
     flex-direction: column;
+    width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
   }
@@ -242,7 +252,16 @@ export default defineComponent({
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
+    // justify-content: center;
     column-gap: 5%;
+    &--row {
+      @include flex(center, center, row);
+      flex-wrap: nowrap;
+
+      .slider__elem {
+        height: auto;
+      }
+    }
   }
 
   &__elem {

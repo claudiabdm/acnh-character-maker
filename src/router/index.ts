@@ -5,6 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
+    redirect: 'skin',
     component: Home,
     props: true,
     children: [
@@ -22,6 +23,16 @@ const routes: Array<RouteRecordRaw> = [
         path: 'eyes',
         name: 'eyes',
         component: () => import('../components/SettingsEyes.vue')
+      },
+      {
+        path: 'nose-mouth',
+        name: 'nose-mouth',
+        component: () => import('../components/SettingsNoseMouth.vue')
+      },
+      {
+        path: 'blush',
+        name: 'blush',
+        component: () => import('../components/SettingsBlush.vue')
       }
     ]
   }
@@ -29,6 +40,7 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   history: createWebHistory(),
+  linkActiveClass: 'settings__link--active',
   routes
 });
 

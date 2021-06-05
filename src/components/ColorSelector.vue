@@ -96,7 +96,7 @@ export default defineComponent({
   grid-template-rows: repeat(2, minmax(rem(100px), 12vh));
   align-items: center;
   @media screen and (min-width: 1024px) {
-    padding: 50px;
+    padding: 0 50px;
   }
 
   &__color {

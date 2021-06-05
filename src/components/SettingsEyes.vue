@@ -28,10 +28,10 @@ export default defineComponent({
       colors: ['#4e4848', '#8c501d', '#275976', '#3a5c3e', '#bab4b4'],
       eyes: [
         'zzzlashes',
-        'oval',
+        'eyes-oval',
         'ovaltoplash',
         'ovalbottomlash',
-        'circle',
+        'eyes-circle',
         'circletoplash',
         'circlebottomlash',
         'smilinglash',
@@ -46,7 +46,7 @@ export default defineComponent({
         'kind',
         'sideeye',
         'kindlash',
-        'cat'
+        'eyes-cat'
       ].sort((a, b) => Number(a) - Number(b))
     };
   },
