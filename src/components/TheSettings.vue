@@ -8,7 +8,7 @@
         :aria-label="icon === 'nose-mouth' ? icon.replace('-', ' / ') : icon"
         class="settings__link"
       >
-        <svg class="settings__btn-svg">
+        <svg viewBow="0 0 1 1" class="settings__btn-svg">
           <use :href="iconPath(icon)" />
         </svg>
       </router-link>
@@ -28,7 +28,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   data() {
     return {
-      icons: ['skin', 'hair', 'eyes', 'nose-mouth', 'blush']
+      icons: ['skin', 'hair', 'eyes', 'nose-mouth', 'blush', 'background']
     };
   },
   methods: {
@@ -84,13 +84,14 @@ export default defineComponent({
       &::before {
         @include size(max-content, auto);
         @include flex(center, center);
-        content: attr(aria-label);
+        content: '   ' attr(aria-label) '   ';
         background-color: var(--tertiary-100);
         color: var(--tertiary-200);
-        padding: 5px 10px;
+        padding: 5px 0;
         text-transform: capitalize;
         transform: translate3d(0, -120%, 0);
         opacity: 1;
+        white-space: pre;
       }
     }
   }

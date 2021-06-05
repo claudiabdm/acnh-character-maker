@@ -17,7 +17,6 @@ export default defineComponent({
     };
   },
   mounted() {
-    console.log(this.$route.name);
     this.$router.push({
       query: {
         skin: this.$route.query.skin || 'ffe6cf',
@@ -27,7 +26,8 @@ export default defineComponent({
         eyesColor: this.$route.query.eyesColor || '5c3b36',
         nose: this.$route.query.nose || 'triangle',
         mouth: this.$route.query.mouth || 'laugh',
-        blush: this.$route.query.blush || 'solid-pink'
+        blush: this.$route.query.blush || 'solid-pink',
+        background: this.$route.query.background || '5a5a5a'
       }
     });
   }

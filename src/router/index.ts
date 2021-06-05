@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'blush',
         name: 'blush',
         component: () => import('../components/SettingsBlush.vue')
+      },
+      {
+        path: 'background',
+        name: 'background',
+        component: () => import('../components/SettingsBackground.vue')
       }
     ]
   }

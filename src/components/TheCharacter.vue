@@ -9,7 +9,7 @@
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="297" height="297" :fill="color" ry="10"></rect>
+      <rect width="297" height="297" :fill="backgroundColor" ry="10"></rect>
       <g id="Character">
         <g id="Ears">
           <ellipse
@@ -1564,11 +1564,6 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  data() {
-    return {
-      color: '#5F9073'
-    };
-  },
   computed: {
     skinColor(): string {
       return `#${this.$route.query.skin || 'ffe6cf'}`;
@@ -1593,6 +1588,9 @@ export default defineComponent({
     },
     blush(): string {
       return `${this.$route.query.blush}`;
+    },
+    backgroundColor(): string {
+      return `#${this.$route.query.background}`;
     }
   }
 });

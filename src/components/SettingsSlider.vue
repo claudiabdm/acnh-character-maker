@@ -50,30 +50,36 @@
               <use :href="elemPath(elem)" />
             </svg>
           </button>
-          <svg class="slider__elem-selected" viewBox="0 0 65 65">
-            <g :visibility="currentElem === elem ? 'visible' : 'hidden'">
-              <ellipse fill="#49dbc6" cx="32" cy="32" rx="30" ry="30" />
-              <rect
-                x="36"
-                y="35"
-                width="20"
-                height="6"
-                rx="0"
-                ry="0"
-                fill="#fff"
-                transform="rotate(40, 26 10)"
-              />
-              <rect
-                x="0"
-                y="34"
-                width="32"
-                height="6"
-                rx="0"
-                ry="0"
-                fill="#fff"
-                transform="rotate(-50, 26 10)"
-              />
-            </g>
+          <svg
+            :class="[
+              'slider__elem-selected',
+              {
+                'slider__elem-selected--active': currentElem === elem
+              }
+            ]"
+            viewBox="0 0 65 65"
+          >
+            <ellipse fill="#49dbc6" cx="32" cy="32" rx="30" ry="30" />
+            <rect
+              x="36"
+              y="35"
+              width="20"
+              height="6"
+              rx="0"
+              ry="0"
+              fill="#fff"
+              transform="rotate(40, 26 10)"
+            />
+            <rect
+              x="0"
+              y="34"
+              width="32"
+              height="6"
+              rx="0"
+              ry="0"
+              fill="#fff"
+              transform="rotate(-50, 26 10)"
+            />
           </svg>
         </li>
       </ul>
@@ -184,7 +190,7 @@ export default defineComponent({
     setButtonVisibility(e: Event): void {
       const el = e.target as Element;
       this.isRow = false;
-      if (el.scrollWidth === el.clientWidth) {
+      if (el.scrollWidth - el.clientWidth <= 1) {
         this.isPrevVisible = false;
         this.isNextVisible = false;
         this.isRow = true;
@@ -217,7 +223,7 @@ export default defineComponent({
 @import '@/styles/mixins/_mixins.scss';
 .slider {
   position: relative;
-  padding: 10px 50px;
+  padding: 10px $padding-s;
 
   &__scroll {
     display: flex;
@@ -242,6 +248,10 @@ export default defineComponent({
     }
   }
 
+  &__elem {
+    position: relative;
+  }
+
   &__btn-svg {
     color: var(--accent-200);
   }
@@ -252,14 +262,14 @@ export default defineComponent({
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
-    // justify-content: center;
     column-gap: 5%;
     &--row {
-      @include flex(center, center, row);
+      @include flex(center, space-evenly, row);
       flex-wrap: nowrap;
 
       .slider__elem {
         height: auto;
+        margin: 5px;
       }
     }
   }
@@ -307,11 +317,17 @@ export default defineComponent({
   }
 
   &__elem-selected {
-    @include size(rem(26px));
+    @include size(0);
     position: absolute;
     top: 0;
     right: 0;
     z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s, width 0.15s ease-in-out, height 0.15s ease-in-out;
+    &--active {
+      @include size(rem(26px));
+      opacity: 1;
+    }
   }
 
   .slider__elem-btn:hover::before {
