@@ -41,16 +41,14 @@
               { 'slider__elem-btn--selected': currentElem === elem }
             ]"
           >
-            <template>
-              <svg
-                viewBox="0 0 1 1"
-                class="slider__elem-svg"
-                :fill="currentElemColor"
-                :stroke="currentElemColor"
-              >
-                <use :href="elemPath(elem)" />
-              </svg>
-            </template>
+            <svg
+              viewBox="0 0 1 1"
+              class="slider__elem-svg"
+              :fill="currentElemColor"
+              :stroke="currentElemColor"
+            >
+              <use :href="elemPath(elem)" />
+            </svg>
           </button>
           <svg
             :class="[
