@@ -29,6 +29,7 @@ export default defineComponent({
         content: description
       },
       twitter: {
+        card: 'summary',
         title,
         description,
         image,
