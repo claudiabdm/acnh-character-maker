@@ -8,7 +8,6 @@ module.exports = {
     backgroundColor: '#eceed6',
     themeColor: '#49dbc6',
     msTileColor: '#49dbc6',
-    startUrl: 'https://animal-crossing-character-maker.netlify.app/',
     iconPaths: {
       favicon32: 'img/icons/favicon-32x32.png',
       favicon16: 'img/icons/favicon-16x16.png',
