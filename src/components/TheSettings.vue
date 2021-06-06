@@ -70,7 +70,7 @@ export default defineComponent({
   }
 
   &__link {
-    @include size(rem(60px), rem(60px));
+    @include size(rem(50px), rem(50px));
     @include flex(center, center);
     position: relative;
     border-radius: 50%;
@@ -87,11 +87,10 @@ export default defineComponent({
       position: absolute;
       border-radius: rem(20px);
       transform: translate3d(0, -100%, 0);
-      transition: transform 0.25s;
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 1;
     }
     &--active {
-      transition: all 0.5s;
       .settings__btn-svg {
         color: var(--base);
       }
@@ -103,10 +102,17 @@ export default defineComponent({
         color: var(--tertiary-200);
         padding: 5px 0;
         text-transform: capitalize;
-        transform: translate3d(0, -120%, 0);
+        font-size: rem(12px);
+        transform: translate3d(0, -130%, 0);
         opacity: 1;
         white-space: pre;
+        @media screen and (min-width: 768px) {
+          font-size: 1rem;
+        }
       }
+    }
+    @media screen and (min-width: 768px) {
+      @include size(rem(70px), rem(70px));
     }
   }
 

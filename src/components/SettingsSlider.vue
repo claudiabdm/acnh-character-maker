@@ -348,7 +348,8 @@ export default defineComponent({
     right: 0;
     z-index: 2;
     opacity: 0;
-    transition: opacity 0.25s, width 0.15s ease-in-out, height 0.15s ease-in-out;
+    transition: width 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      height 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     &--active {
       @include size(rem(26px));
       opacity: 1;
