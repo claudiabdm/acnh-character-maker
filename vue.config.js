@@ -14,9 +14,6 @@ module.exports = {
       favicon16: 'img/icons/favicon-16x16.png',
       appleTouchIcon: 'img/icons/apple-touch-icon-152x152.png',
       msTileImage: 'img/icons/msapplication-icon-144x144.png'
-    },
-    workboxOptions: {
-      exclude: [/_redirects/]
     }
   }
 };
