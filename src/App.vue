@@ -21,54 +21,32 @@ export default defineComponent({
     const title = 'AC: Character Maker';
     const image =
       'https://res.cloudinary.com/claudiabdm/image/upload/v1622931480/animal-crossing/logo-preview.png';
+    const site = 'https://animal-crossing-character-maker.netlify.app/';
+    const creator = '@claudiabdm';
+
     useMeta({
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: description
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: title
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: description
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: image
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: title
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: description
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: image
-        },
-        {
-          hid: 'mobile-web-app-capable',
-          name: 'mobile-web-app-capable',
-          content: title
-        },
-        {
-          hid: 'apple-mobile-web-app-title',
-          name: 'apple-mobile-web-app-title',
-          content: title
-        }
-      ],
+      description: {
+        content: description
+      },
+      twitter: {
+        title,
+        description,
+        image,
+        site,
+        creator
+      },
+      og: {
+        title,
+        description,
+        image,
+        site
+      },
+      'mobile-web-app-capable': {
+        title
+      },
+      'apple-mobile-web-app-title': {
+        title
+      },
       htmlAttrs: {
         lang: 'en'
       }
