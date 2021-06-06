@@ -1563,6 +1563,7 @@
       "
       width="214"
       height="169"
+      :alt="clothes"
     />
   </div>
 </template>

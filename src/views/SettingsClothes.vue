@@ -28,6 +28,7 @@
           "
           width="230"
           height="169"
+          :alt="elem"
         />
       </button>
       <svg

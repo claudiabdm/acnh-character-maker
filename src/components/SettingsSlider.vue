@@ -41,7 +41,7 @@
               { 'slider__elem-btn--selected': currentElem === elem }
             ]"
           >
-            <template v-if="elemType !== 'clothes'">
+            <template>
               <svg
                 viewBox="0 0 1 1"
                 class="slider__elem-svg"
@@ -50,16 +50,6 @@
               >
                 <use :href="elemPath(elem)" />
               </svg>
-            </template>
-            <template v-else>
-              <img
-                class="slider__elem-img"
-                :src="
-                  `https://res.cloudinary.com/claudiabdm/image/upload/v1622909938/animal-crossing/${elem}.png`
-                "
-                width="230"
-                height="169"
-              />
             </template>
           </button>
           <svg
