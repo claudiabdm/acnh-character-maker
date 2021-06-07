@@ -40,7 +40,7 @@ html {
 }
 #app {
   @include size(100%, 100%);
-  background-image: url('~@/assets/newhorizons_wallpaper_CharEditor.png');
+  background-image: url('https://res.cloudinary.com/claudiabdm/image/upload/v1623082404/animal-crossing/newhorizons_wallpaper_CharEditor.png');
   font-family: $font-primary;
   overflow: hidden;
 }
