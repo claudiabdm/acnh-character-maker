@@ -16,32 +16,9 @@ import { useMeta } from 'vue-meta';
 export default defineComponent({
   name: 'App',
   setup() {
-    const description =
-      'Create your animal crossing character! Built with Vue 3 by Claudia Benito (@claudiabdm). Character design by Ace S Chen.';
     const title = 'AC: Character Maker';
-    const image =
-      'https://res.cloudinary.com/claudiabdm/image/upload/v1622931480/animal-crossing/logo-preview.png';
-    const site = 'https://animal-crossing-character-maker.netlify.app/';
-    const creator = '@claudiabdm';
 
     useMeta({
-      description: {
-        content: description
-      },
-      twitter: {
-        card: 'summary',
-        title,
-        description,
-        image,
-        site,
-        creator
-      },
-      og: {
-        title,
-        description,
-        image,
-        site
-      },
       'mobile-web-app-capable': {
         title
       },
