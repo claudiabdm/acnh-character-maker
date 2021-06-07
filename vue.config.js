@@ -5,8 +5,7 @@ module.exports = {
       name: 'Animal Crossing: Character Maker',
       short_name: 'AC: Char Maker',
       description: 'Create your animal crossing character! Built with Vue 3',
-      background_color: '#eceed6',
-      start_url: 'index.html'
+      background_color: '#eceed6'
     },
     themeColor: '#49dbc6',
     msTileColor: '#49dbc6',
