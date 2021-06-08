@@ -1,6 +1,6 @@
 <template>
-  <div class="clothes">
-    <div
+  <ul class="clothes">
+    <li
       v-for="elem in [
         ...tees,
         ...cropTops,
@@ -11,12 +11,12 @@
         ...sweaters
       ]"
       :key="elem"
-      :class="['clothes__elem']"
+      :class="['clothes__elem', 'appear']"
     >
       <button
         :class="[
           'clothes__elem-img',
-          { 'clothes__elem-img--selected': currentClothes === elem }
+          { 'clothes__elem-img--tick': currentClothes === elem }
         ]"
         :aria-label="`Select ${elem}`"
         type="button"
@@ -33,9 +33,9 @@
       </button>
       <svg
         :class="[
-          'clothes__elem-selected',
+          'clothes__elem-tick',
           {
-            'clothes__elem-selected--active': currentClothes === elem
+            'clothes__elem-tick--active': currentClothes === elem
           }
         ]"
         viewBox="0 0 65 65"
@@ -62,8 +62,8 @@
           transform="rotate(-50, 26 10)"
         />
       </svg>
-    </div>
-  </div>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
@@ -183,10 +183,9 @@ export default defineComponent({
   justify-items: center;
   align-items: center;
   justify-content: center;
-  padding: 0 $padding-s;
-  @media screen and (min-width: 1024px) {
-    overflow-y: auto;
-  }
+  padding: $padding-s;
+  overflow-y: auto;
+
   &__elem {
     position: relative;
   }
@@ -222,11 +221,11 @@ export default defineComponent({
     }
   }
 
-  &__elem-selected {
+  &__elem-tick {
     @include size(0);
     position: absolute;
-    top: 0;
-    right: 0;
+    top: rem(-5px);
+    right: rem(-5px);
     z-index: 2;
     opacity: 0;
     transition: width 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -234,6 +233,9 @@ export default defineComponent({
     &--active {
       @include size(rem(26px));
       opacity: 1;
+      @media screen and (min-width: 768px) {
+        @include size(rem(30px));
+      }
     }
   }
   .clothes__elem-img:hover::before {

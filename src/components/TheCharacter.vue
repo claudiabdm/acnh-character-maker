@@ -3,10 +3,10 @@
   <div class="character">
     <svg
       class="character__svg"
-      width="300"
-      height="300"
       viewBox="0 0 300 300"
       fill="none"
+      width="300"
+      height="300"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
@@ -1611,30 +1611,48 @@ export default defineComponent({
 @import '@/styles/global/_variables.scss';
 @import '@/styles/mixins/_mixins.scss';
 
+$avatar-size: 200px;
+
 .character {
   position: relative;
   display: flex;
-  border: rem(20px) solid #fff;
+  border: rem(15px) solid #fff;
   border-radius: rem(20px);
   background-color: #fff;
   overflow: hidden;
 
+  @media screen and (min-width: 1024px) {
+    border-width: rem(20px);
+  }
+
   &__svg {
+    @include size(rem($avatar-size), rem($avatar-size));
     #Hairs,
     #Eyes {
       transition: $transition-color;
     }
+    @media screen and (min-width: 1024px) {
+      @include size(300px, 300px);
+    }
   }
   &__clothes {
     position: absolute;
-    width: rem(214px);
-    height: rem(163px);
-    top: rem(190px);
-    right: rem(44px);
+    width: rem((214px * $avatar-size) / 300px);
+    height: rem((163px * $avatar-size) / 300px);
+    top: rem((190px * $avatar-size) / 300px);
+    right: rem((44px * $avatar-size) / 300px);
     z-index: 0;
+    @media screen and (min-width: 1024px) {
+      width: rem(214px);
+      height: rem(163px);
+      top: rem(190px);
+      right: rem(44px);
+      z-index: 0;
+    }
   }
 
   &__background {
+    @include size(100%, 100%);
     transition: $transition-color;
   }
 }

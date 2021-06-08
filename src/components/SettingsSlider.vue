@@ -29,7 +29,7 @@
     <div class="slider__scroll" ref="sliderScroll">
       <ul :class="['slider__elem-list', { 'slider__elem-list--row': isRow }]">
         <li
-          class="slider__elem"
+          class="slider__elem appear"
           v-for="elem in elemList"
           :key="elem"
           @click="changeCurrentElem(elem)"
@@ -38,7 +38,7 @@
             type="button"
             :class="[
               'slider__elem-btn',
-              { 'slider__elem-btn--selected': currentElem === elem }
+              { 'slider__elem-btn--tick': currentElem === elem }
             ]"
           >
             <svg
@@ -52,9 +52,9 @@
           </button>
           <svg
             :class="[
-              'slider__elem-selected',
+              'slider__elem-tick',
               {
-                'slider__elem-selected--active': currentElem === elem
+                'slider__elem-tick--active': currentElem === elem
               }
             ]"
             viewBox="0 0 65 65"
@@ -223,7 +223,7 @@ export default defineComponent({
 @import '@/styles/mixins/_mixins.scss';
 .slider {
   position: relative;
-  padding: 10px 50px;
+  padding: rem(10px) rem(50px);
 
   &--row {
     padding-left: $padding-s;
@@ -268,19 +268,20 @@ export default defineComponent({
     justify-items: center;
     align-items: center;
     column-gap: 5%;
+    padding: rem(5px) 0;
     &--row {
       @include flex(center, space-evenly, row);
       flex-wrap: nowrap;
 
       .slider__elem {
         height: auto;
-        margin: 5px;
+        margin: rem(5px);
       }
     }
   }
 
   &__elem {
-    @include size(rem(145px / 1.5), rem(160px / 1.5));
+    @include size(rem(145px / 2), rem(160px / 2));
     position: relative;
     @media screen and (min-width: 1024px) {
       @include size(rem(145px), rem(160px));
@@ -290,7 +291,7 @@ export default defineComponent({
   &__elem-btn {
     @include flex(center, center);
     position: relative;
-    padding: 10px;
+    padding: rem(10px);
     align-items: center;
     justify-content: center;
     &::before {
@@ -329,11 +330,11 @@ export default defineComponent({
     }
   }
 
-  &__elem-selected {
+  &__elem-tick {
     @include size(0);
     position: absolute;
-    top: 0;
-    right: 0;
+    top: rem(-5px);
+    right: rem(-5px);
     z-index: 2;
     opacity: 0;
     transition: width 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -341,6 +342,9 @@ export default defineComponent({
     &--active {
       @include size(rem(26px));
       opacity: 1;
+      @media screen and (min-width: 768px) {
+        @include size(rem(30px));
+      }
     }
   }
 

@@ -1,17 +1,29 @@
 <template>
   <section class="settings">
     <nav class="settings__buttons" aria-label="Settings options">
-      <router-link
+      <div
+        :class="[
+          'settings__link-wrapper',
+          { 'settings__link-wrapper--active': tabSelected === icon }
+        ]"
         v-for="icon in icons"
-        :to="{ path: icon, query: { ...$route.query } }"
         :key="icon"
         :aria-label="icon === 'nose-mouth' ? icon.replace('-', ' / ') : icon"
-        class="settings__link"
+        @click="tabSelected = icon"
       >
-        <svg viewBow="0 0 1 1" class="settings__btn-svg">
-          <use :href="iconPath(icon)" />
-        </svg>
-      </router-link>
+        <router-link
+          class="settings__link"
+          :to="{ path: icon, query: { ...$route.query } }"
+        >
+          <svg
+            @click="console.log('click')"
+            viewBow="0 0 1 1"
+            class="settings__link-icon"
+          >
+            <use :href="iconPath(icon)" />
+          </svg>
+        </router-link>
+      </div>
     </nav>
     <div class="settings__options">
       <router-view v-slot="{ Component }">
@@ -36,7 +48,8 @@ export default defineComponent({
         'blush',
         'background',
         'clothes'
-      ]
+      ],
+      tabSelected: 'skin'
     };
   },
   methods: {
@@ -63,14 +76,13 @@ export default defineComponent({
   }
 
   &__buttons {
-    @include size(100%, auto);
+    @include size(100%, max-content);
     @include flex(center, center);
     flex-wrap: nowrap;
-    padding: $padding-s + 10px;
+    padding: rem($padding-s + 10px);
   }
 
-  &__link {
-    @include size(rem(50px), rem(50px));
+  &__link-wrapper {
     @include flex(center, center);
     position: relative;
     border-radius: 50%;
@@ -91,7 +103,7 @@ export default defineComponent({
       z-index: 1;
     }
     &--active {
-      .settings__btn-svg {
+      .settings__link-icon {
         color: var(--base);
       }
       &::before {
@@ -100,7 +112,7 @@ export default defineComponent({
         content: '   ' attr(aria-label) '   ';
         background-color: var(--tertiary-100);
         color: var(--tertiary-200);
-        padding: 5px 0;
+        padding: rem(5px) 0;
         text-transform: capitalize;
         font-size: rem(12px);
         transform: translate3d(0, -130%, 0);
@@ -111,14 +123,20 @@ export default defineComponent({
         }
       }
     }
+  }
+
+  &__link {
+    @include flex(center, center);
+    @include size(rem(60px), rem(60px));
     @media screen and (min-width: 768px) {
       @include size(rem(70px), rem(70px));
     }
   }
 
-  &__btn-svg {
-    width: 50%;
+  &__link-icon {
+    @include size(50%, 50%);
     color: var(--tertiary-100);
+    pointer-events: all;
     transition: color 0.15s;
   }
 }

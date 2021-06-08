@@ -1,20 +1,30 @@
 <template>
   <section class="viewer">
+    <section class="viewer__credit">
+      <p>
+        Developed with ♥️ by
+        <a class="viewer__credit-link" href="https://github.com/claudiabdm">
+          Claudia Benito
+        </a>
+      </p>
+    </section>
     <div class="viewer__avatar">
       <the-character></the-character>
     </div>
+    <section class="viewer__credit">
+      <p>
+        Character design by
+        <a
+          class="viewer__credit-link"
+          href="https://www.figma.com/community/file/834210307944210537/Animal-Crossing-Character-Maker"
+        >
+          Ace S Chen
+        </a>
+      </p>
+    </section>
     <button class="btn" type="button" @click="downloadSVGAsPNG">
       {{ downloadText }}
     </button>
-    <p class="viewer__credit">
-      Character design by
-      <a
-        class="viewer__credit-link"
-        href="https://www.figma.com/community/file/834210307944210537/Animal-Crossing-Character-Maker"
-      >
-        Ace S Chen
-      </a>
-    </p>
   </section>
 </template>
 
@@ -31,6 +41,9 @@ export default defineComponent({
   },
   methods: {
     downloadSVGAsPNG() {
+      window.scrollTo({
+        top: 0
+      });
       this.downloadText = 'Loading...';
       const svg = document.getElementsByClassName(
         'viewer__avatar'
@@ -41,7 +54,8 @@ export default defineComponent({
         html2canvas(svg, {
           foreignObjectRendering: false,
           allowTaint: true,
-          useCORS: true
+          useCORS: true,
+          scale: svg.clientWidth < 300 ? 3 : 1
         }).then(canvas => {
           document.body.appendChild(canvas);
           const dataURL = canvas.toDataURL('image/png');
@@ -64,10 +78,14 @@ export default defineComponent({
 
 .viewer {
   @include flex(center, center, column);
-  margin: 10vw;
+  margin: rem(20px);
+  @media screen and (min-width: 1024px) {
+    margin: 10vw;
+  }
   &__credit {
     color: var(--accent-200);
-    font-size: rem(14px);
+    font-size: rem(12px);
+    margin: rem(10px);
   }
   &__credit-link {
     color: var(--accent-200);

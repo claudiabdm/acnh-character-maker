@@ -1,11 +1,15 @@
 <template>
-  <div class="colors">
-    <div class="colors__color-wrapper" v-for="color in colors" :key="color">
+  <ul class="colors">
+    <li
+      class="colors__color-wrapper appear"
+      v-for="color in colors"
+      :key="color"
+    >
       <svg
         @click="changeColor(color)"
         :class="[
           'colors__color',
-          { 'colors__color--selected': currentColor === color }
+          { 'colors__color--tick': currentColor === color }
         ]"
         viewBox="0 0 85 85"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +24,9 @@
       </svg>
       <svg
         :class="[
-          'colors__color-selected',
+          'colors__color-tick',
           {
-            'colors__color-selected--active': currentColor === color
+            'colors__color-tick--active': currentColor === color
           }
         ]"
         viewBox="0 0 65 65"
@@ -49,8 +53,8 @@
           transform="rotate(-50, 26 10)"
         />
       </svg>
-    </div>
-  </div>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
@@ -92,14 +96,14 @@ export default defineComponent({
   align-items: center;
   justify-items: center;
   @media screen and (min-width: 1024px) {
-    padding: 0 50px;
+    padding: 0 rem(50px);
   }
   &__color-wrapper {
     position: relative;
   }
   &__color {
-    width: rem(85px);
-    max-width: rem(85px);
+    width: rem(60px);
+    max-width: rem(60px);
     &:hover {
       cursor: pointer;
     }
@@ -109,15 +113,19 @@ export default defineComponent({
         stroke: var(--secondary-100);
         stroke-width: 20;
       }
-      .colors__color-selected {
+      .colors__color-tick {
         opacity: 1;
       }
     }
+    @media screen and (min-width: 1024px) {
+      width: rem(85px);
+      max-width: rem(85px);
+    }
   }
-  &__color-selected {
+  &__color-tick {
     @include size(0);
     position: absolute;
-    transform: translate3d(-26px, 0, 0);
+    transform: translate3d(rem(-26px), 0, 0);
     z-index: 2;
     opacity: 0;
     transition: width 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -125,6 +133,9 @@ export default defineComponent({
     &--active {
       @include size(rem(26px));
       opacity: 1;
+      @media screen and (min-width: 768px) {
+        @include size(rem(30px));
+      }
     }
   }
 }

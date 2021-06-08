@@ -37,7 +37,12 @@ export default defineComponent({
 @import '@/styles/styles.scss';
 html {
   background-color: var(--primary-100);
+  font-size: 14px;
+  @media screen and (min-width: 1024px) {
+    font-size: 16px;
+  }
 }
+
 #app {
   @include size(100%, 100%);
   background-image: url('https://res.cloudinary.com/claudiabdm/image/upload/v1623082404/animal-crossing/newhorizons_wallpaper_CharEditor.png');
@@ -59,5 +64,26 @@ html {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.appear {
+  opacity: 0;
+  animation: appear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  will-change: transform;
+  @for $i from 1 through 100 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.025s;
+    }
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 </style>
