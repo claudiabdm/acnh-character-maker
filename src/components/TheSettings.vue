@@ -15,11 +15,7 @@
           class="settings__link"
           :to="{ path: icon, query: { ...$route.query } }"
         >
-          <svg
-            @click="console.log('click')"
-            viewBow="0 0 1 1"
-            class="settings__link-icon"
-          >
+          <svg viewBow="0 0 1 1" class="settings__link-icon">
             <use :href="iconPath(icon)" />
           </svg>
         </router-link>
