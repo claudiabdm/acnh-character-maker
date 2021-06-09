@@ -1,10 +1,6 @@
 <template>
   <ul class="colors">
-    <li
-      class="colors__color-wrapper appear"
-      v-for="color in colors"
-      :key="color"
-    >
+    <li class="colors__color-wrapper" v-for="color in colors" :key="color">
       <svg
         @click="changeColor(color)"
         :class="[
@@ -90,6 +86,7 @@ export default defineComponent({
 @import '@/styles/mixins/_mixins.scss';
 
 .colors {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
@@ -118,8 +115,8 @@ export default defineComponent({
       }
     }
     @media screen and (min-width: 1024px) {
-      width: rem(85px);
-      max-width: rem(85px);
+      width: rem(100px);
+      max-width: rem(100px);
     }
   }
   &__color-tick {

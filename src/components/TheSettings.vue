@@ -9,7 +9,7 @@
         v-for="icon in icons"
         :key="icon"
         :aria-label="icon === 'nose-mouth' ? icon.replace('-', ' / ') : icon"
-        @click="tabSelected = icon"
+        @click="onSelectTab(icon)"
       >
         <router-link
           class="settings__link"
@@ -48,9 +48,15 @@ export default defineComponent({
       tabSelected: 'skin'
     };
   },
+  mounted() {
+    this.tabSelected = String(this.$route.name) || 'skin';
+  },
   methods: {
     iconPath(icon: string): string {
       return require('@/assets/icons.svg') + '#' + icon;
+    },
+    onSelectTab(icon: string): void {
+      this.tabSelected = icon;
     }
   }
 });
@@ -62,12 +68,14 @@ export default defineComponent({
 
 .settings {
   @include size(100%, 100%);
+  min-height: 100vh;
   background-color: var(--primary-100);
   overflow: hidden;
 
   &__options {
     @media screen and (min-width: 1024px) {
       height: calc(100% - 135px);
+      overflow-y: auto;
     }
   }
 

@@ -29,7 +29,7 @@
     <div class="slider__scroll" ref="sliderScroll">
       <ul :class="['slider__elem-list', { 'slider__elem-list--row': isRow }]">
         <li
-          class="slider__elem appear"
+          class="slider__elem"
           v-for="elem in elemList"
           :key="elem"
           @click="changeCurrentElem(elem)"

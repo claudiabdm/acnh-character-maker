@@ -66,24 +66,24 @@ html {
   opacity: 0;
 }
 
-.appear {
-  opacity: 0;
-  animation: appear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  will-change: transform;
-  @for $i from 1 through 100 {
-    &:nth-child(#{$i}) {
-      animation-delay: $i * 0.025s;
-    }
-  }
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 10%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
+// .appear {
+//   opacity: 0;
+//   transform: translate3d(0, 50%, 0);
+//   animation: appear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+//   @for $i from 1 through 100 {
+//     &:nth-child(#{$i}) {
+//       animation-delay: $i * 0.025s;
+//     }
+//   }
+// }
+// @keyframes appear {
+//   0% {
+//     opacity: 0;
+//     transform: translate3d(0, 10%, 0);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
 </style>

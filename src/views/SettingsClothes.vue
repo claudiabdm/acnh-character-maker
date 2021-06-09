@@ -1,18 +1,6 @@
 <template>
   <ul class="clothes">
-    <li
-      v-for="elem in [
-        ...tees,
-        ...cropTops,
-        ...longSleeves,
-        ...sleeveless,
-        ...puffySleeves,
-        ...cupcakeDresses,
-        ...sweaters
-      ]"
-      :key="elem"
-      :class="['clothes__elem', 'appear']"
-    >
+    <li v-for="elem in clothes" :key="elem" class="clothes__elem">
       <button
         :class="[
           'clothes__elem-img',
@@ -78,7 +66,8 @@ export default defineComponent({
   },
   data() {
     return {
-      clothes: [],
+      imagesLoaded: 0,
+      clothes: [] as string[],
       tees: [
         'tee-2',
         'tee-3',
@@ -156,6 +145,20 @@ export default defineComponent({
       ]
     };
   },
+  mounted() {
+    this.clothes = [
+      ...this.tees,
+      ...this.cropTops,
+      ...this.longSleeves,
+      ...this.sleeveless,
+      ...this.puffySleeves,
+      ...this.cupcakeDresses,
+      ...this.sweaters
+    ];
+  },
+  unmounted() {
+    this.clothes = [];
+  },
   computed: {
     currentClothes(): string {
       return `${this.$route.query.clothes}`;
@@ -184,7 +187,6 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   padding: $padding-s;
-  overflow-y: auto;
 
   &__elem {
     position: relative;
