@@ -12,7 +12,7 @@
       >
         <img
           :src="
-            `https://res.cloudinary.com/claudiabdm/image/upload/v1622909938/animal-crossing/${elem}.png`
+            `https://res.cloudinary.com/claudiabdm/image/upload/f_auto/animal-crossing/${elem}`
           "
           width="230"
           height="169"

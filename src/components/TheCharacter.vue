@@ -1559,7 +1559,7 @@
     <img
       class="character__clothes"
       :src="
-        `https://res.cloudinary.com/claudiabdm/image/upload/v1622909938/animal-crossing/${clothes}.png`
+        `https://res.cloudinary.com/claudiabdm/image/upload/f_auto/animal-crossing/${clothes}.png`
       "
       width="214"
       height="169"
