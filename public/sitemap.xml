@@ -6,30 +6,30 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/skin</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/skin</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/hair</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/hair</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/eyes</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/eyes</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/nose-mouth</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/nose-mouth</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/blush</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/blush</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/background</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/background</loc>
   </url>
   <url>
-    <loc>https://www.animal-crossing-char-maker.com/clothes</loc>
+    <loc>https://animal-crossing-character-maker.netlify.app/clothes</loc>
   </url>
 </urlset>
