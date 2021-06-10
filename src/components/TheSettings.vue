@@ -48,8 +48,12 @@ export default defineComponent({
       tabSelected: 'skin'
     };
   },
-  mounted() {
-    this.tabSelected = String(this.$route.name) || 'skin';
+  watch: {
+    $route(to, from) {
+      if (this.tabSelected !== to.name) {
+        this.tabSelected = to.name;
+      }
+    }
   },
   methods: {
     iconPath(icon: string): string {
