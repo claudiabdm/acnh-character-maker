@@ -1,5 +1,6 @@
 # acnh-char-maker
 
+An animal crossing character maker built with Vue 3.
 
 Character design by: 
 https://www.figma.com/community/file/834210307944210537/Animal-Crossing-Character-Maker
