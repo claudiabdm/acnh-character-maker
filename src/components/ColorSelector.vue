@@ -9,6 +9,7 @@
         ]"
         viewBox="0 0 85 85"
         xmlns="http://www.w3.org/2000/svg"
+        :data-test="`color-${color}`"
       >
         <path
           transform="matrix(.15743 0 0 .15743 0 0)"
@@ -26,6 +27,7 @@
           }
         ]"
         viewBox="0 0 65 65"
+        :data-test="`color-tick-${color}`"
       >
         <ellipse fill="#49dbc6" cx="32" cy="32" rx="30" ry="30" />
         <rect
@@ -61,11 +63,11 @@ export default defineComponent({
   props: {
     colors: {
       type: Array,
-      default: () => ['#fff']
+      required: true
     },
     selectedColor: {
       type: String,
-      default: '#fff'
+      required: true
     }
   },
   computed: {

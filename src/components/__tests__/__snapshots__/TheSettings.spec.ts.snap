@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Settings should match the snapshot 1`] = `
+<section
+  class="settings"
+>
+  <nav
+    aria-label="Settings options"
+    class="settings__buttons"
+  >
+    
+    <div
+      aria-label="skin"
+      class="settings__link-wrapper settings__link-wrapper--active"
+    >
+      <router-link-stub
+        class="settings__link"
+        to="[object Object]"
+      />
+    </div>
+    <div
+      aria-label="hair"
+      class="settings__link-wrapper"
+    >
+      <router-link-stub
+        class="settings__link"
+        to="[object Object]"
+      />
+    </div>
+    <div
+      aria-label="eyes"
+      class="settings__link-wrapper"
+    >
+      <router-link-stub
+        class="settings__link"
+        to="[object Object]"
+      />
+    </div>
+    <div
+      aria-label="nose / mouth"
+      class="settings__link-wrapper"
+    >
+      <router-link-stub
+        class="settings__link"
+        to="[object Object]"
+      />
+    </div>
+    <div
+      aria-label="blush"
+      class="settings__link-wrapper"
+    >
+      <router-link-stub
+        class="settings__link"
+        to="[object Object]"
+      />
+    </div>
+    <div
+      aria-label="background"
+      class="settings__link-wrapper"
+    >
+      <router-link-stub
+        class="settings__link"
+        to="[object Object]"
+      />
+    </div>
+    <div
+      aria-label="clothes"
+      class="settings__link-wrapper"
+    >
+      <router-link-stub
+        class="settings__link"
+        to="[object Object]"
+      />
+    </div>
+    
+  </nav>
+  <div
+    class="settings__options"
+  >
+    <router-view-stub />
+  </div>
+</section>
+`;

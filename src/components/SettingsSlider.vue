@@ -10,6 +10,7 @@
       @touchstart="onPrev()"
       @touchend="stopInterval"
       @touchcancel="stopInterval"
+      data-test="buttonPrev"
     >
       <svg
         class="slider__btn-svg"
@@ -28,18 +29,15 @@
     </button>
     <div class="slider__scroll" ref="sliderScroll">
       <ul :class="['slider__elem-list', { 'slider__elem-list--row': isRow }]">
-        <li
-          class="slider__elem"
-          v-for="elem in elemList"
-          :key="elem"
-          @click="changeCurrentElem(elem)"
-        >
+        <li class="slider__elem" v-for="elem in elemList" :key="elem">
           <button
             type="button"
             :class="[
               'slider__elem-btn',
               { 'slider__elem-btn--tick': currentElem === elem }
             ]"
+            @click="changeCurrentElem(elem)"
+            :data-test="`select-elem-${elem}`"
           >
             <svg
               viewBox="0 0 1 1"
@@ -94,6 +92,7 @@
       @touchstart="onNext()"
       @touchend="stopInterval"
       @touchcancel="stopInterval"
+      data-test="buttonNext"
     >
       <svg
         class="slider__btn-svg"
@@ -139,47 +138,47 @@ export default defineComponent({
   props: {
     elemList: {
       type: Array,
-      default: () => [''] as string[]
+      required: true
     },
     elemType: {
       type: String as () => 'hairs' | 'eyes',
-      default: ''
+      required: true
     },
     currentElem: {
       type: String,
-      default: ''
+      required: true
     },
     currentElemColor: {
       type: String,
-      default: ''
+      required: true
     }
   },
   methods: {
     onNext(): void {
       if (!this.interval) {
-        this.interval = setInterval(() => {
-          const scrollPosition =
-            this.sliderScrollEl.scrollLeft + this.sliderScrollEl.clientWidth;
-          if (scrollPosition < this.sliderScrollEl.scrollWidth) {
-            this.sliderScrollEl.scrollBy({
-              left: this.offset,
-              behavior: 'smooth'
-            });
-          }
-        });
+        this.interval = setInterval(
+          this.changeScrollPosition.bind(null, this.sliderScrollEl, this.offset)
+        );
       }
     },
     onPrev() {
       if (!this.interval) {
-        this.interval = setInterval(() => {
-          const scrollPosition =
-            this.sliderScrollEl.scrollLeft + this.sliderScrollEl.clientWidth;
-          if (scrollPosition > 0) {
-            this.sliderScrollEl.scrollBy({
-              left: -this.offset,
-              behavior: 'smooth'
-            });
-          }
+        this.interval = setInterval(
+          this.changeScrollPosition.bind(
+            null,
+            this.sliderScrollEl,
+            -this.offset
+          )
+        );
+      }
+    },
+    changeScrollPosition(scrollElement: Element, offset: number): void {
+      const scrollPosition =
+        scrollElement.scrollLeft + scrollElement.clientWidth;
+      if (scrollPosition < scrollElement.scrollWidth) {
+        scrollElement.scrollBy({
+          left: offset,
+          behavior: 'smooth'
         });
       }
     },

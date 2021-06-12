@@ -1,42 +1,53 @@
 {
-    "root": true,
-    "env": {
-        "node": true,
-        "browser": true,
-        "es6": true
-    },
-    "extends": [
-        "plugin:vue/vue3-essential",
-        "eslint:recommended",
-        "@vue/typescript/recommended",
-        "@vue/prettier",
-        "@vue/prettier/@typescript-eslint"
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:vue/vue3-essential",
+    "eslint:recommended",
+    "@vue/typescript/recommended",
+    "@vue/prettier",
+    "@vue/prettier/@typescript-eslint"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "plugins": [
+    "vue",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "vue/no-multiple-template-root": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      },
+      {
+        "vueIndentScriptAndStyle": true
+      }
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaVersion": 2020
-    },
-    "plugins": [
-        "vue",
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "vue/no-multiple-template-root": "off",
-        "prettier/prettier": [
-            "error",
-            {
-                "singleQuote": true
-            },
-            {
-                "vueIndentScriptAndStyle": true
-            }
-        ],
-        "quotes": [
-            2,
-            "single"
-        ]
+    "quotes": [
+      2,
+      "single"
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+      ],
+      "env": {
+        "jest": true
+      }
     }
+  ]
 }

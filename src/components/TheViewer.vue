@@ -57,16 +57,19 @@ export default defineComponent({
           useCORS: true,
           scale: svg.clientWidth < 300 ? 3 : 1
         }).then(canvas => {
-          document.body.appendChild(canvas);
-          const dataURL = canvas.toDataURL('image/png');
-          const a = document.createElement('a');
-          const myEvt = new MouseEvent('click');
-          a.download = 'ac-avatar.png';
-          a.href = dataURL;
-          a.dispatchEvent(myEvt);
+          this.downloadCanvas(canvas);
           this.downloadText = 'Download Image';
         });
       });
+    },
+    downloadCanvas(canvas: HTMLCanvasElement) {
+      document.body.appendChild(canvas);
+      const dataURL = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      const myEvt = new MouseEvent('click');
+      a.download = 'ac-avatar.png';
+      a.href = dataURL;
+      a.dispatchEvent(myEvt);
     }
   }
 });

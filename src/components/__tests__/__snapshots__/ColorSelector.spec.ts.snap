@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Color Selector should match the snapshot 1`] = `
+<ul
+  class="colors"
+>
+  
+  <li
+    class="colors__color-wrapper"
+  >
+    <svg
+      class="colors__color colors__color--tick"
+      data-test="color-#fff"
+      viewBox="0 0 85 85"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m267.66 57.85a218.13 146.53 0 0 0-218.13 146.53 218.13 146.53 0 0 0 4.9668 31.086 218.13 146.53 0 0 0-28.277 72.152 218.13 146.53 0 0 0 218.13 146.53 218.13 146.53 0 0 0 218.13-146.53 218.13 146.53 0 0 0-4.9668-31.086 218.13 146.53 0 0 0 28.277-72.152 218.13 146.53 0 0 0-218.13-146.53z"
+        fill="#fff"
+        stroke="transparent"
+        stroke-width="1.0488"
+        transform="matrix(.15743 0 0 .15743 0 0)"
+      />
+    </svg>
+    <svg
+      class="colors__color-tick colors__color-tick--active"
+      data-test="color-tick-#fff"
+      viewBox="0 0 65 65"
+    >
+      <ellipse
+        cx="32"
+        cy="32"
+        fill="#49dbc6"
+        rx="30"
+        ry="30"
+      />
+      <rect
+        fill="#fff"
+        height="6"
+        rx="0"
+        ry="0"
+        transform="rotate(40, 26 10)"
+        width="20"
+        x="36"
+        y="35"
+      />
+      <rect
+        fill="#fff"
+        height="6"
+        rx="0"
+        ry="0"
+        transform="rotate(-50, 26 10)"
+        width="32"
+        x="0"
+        y="34"
+      />
+    </svg>
+  </li>
+  <li
+    class="colors__color-wrapper"
+  >
+    <svg
+      class="colors__color"
+      data-test="color-#000"
+      viewBox="0 0 85 85"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m267.66 57.85a218.13 146.53 0 0 0-218.13 146.53 218.13 146.53 0 0 0 4.9668 31.086 218.13 146.53 0 0 0-28.277 72.152 218.13 146.53 0 0 0 218.13 146.53 218.13 146.53 0 0 0 218.13-146.53 218.13 146.53 0 0 0-4.9668-31.086 218.13 146.53 0 0 0 28.277-72.152 218.13 146.53 0 0 0-218.13-146.53z"
+        fill="#000"
+        stroke="transparent"
+        stroke-width="1.0488"
+        transform="matrix(.15743 0 0 .15743 0 0)"
+      />
+    </svg>
+    <svg
+      class="colors__color-tick"
+      data-test="color-tick-#000"
+      viewBox="0 0 65 65"
+    >
+      <ellipse
+        cx="32"
+        cy="32"
+        fill="#49dbc6"
+        rx="30"
+        ry="30"
+      />
+      <rect
+        fill="#fff"
+        height="6"
+        rx="0"
+        ry="0"
+        transform="rotate(40, 26 10)"
+        width="20"
+        x="36"
+        y="35"
+      />
+      <rect
+        fill="#fff"
+        height="6"
+        rx="0"
+        ry="0"
+        transform="rotate(-50, 26 10)"
+        width="32"
+        x="0"
+        y="34"
+      />
+    </svg>
+  </li>
+  
+</ul>
+`;

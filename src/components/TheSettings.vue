@@ -4,7 +4,7 @@
       <div
         :class="[
           'settings__link-wrapper',
-          { 'settings__link-wrapper--active': tabSelected === icon }
+          { 'settings__link-wrapper--active': selectedTab === icon }
         ]"
         v-for="icon in icons"
         :key="icon"
@@ -45,13 +45,14 @@ export default defineComponent({
         'background',
         'clothes'
       ],
-      tabSelected: 'skin'
+      selectedTab: 'skin'
     };
   },
   watch: {
-    $route(to, from) {
-      if (this.tabSelected !== to.name) {
-        this.tabSelected = to.name;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    $route(to, _from) {
+      if (this.selectedTab !== to.name) {
+        this.onSelectTab(to.name);
       }
     }
   },
@@ -60,7 +61,7 @@ export default defineComponent({
       return require('@/assets/icons.svg') + '#' + icon;
     },
     onSelectTab(icon: string): void {
-      this.tabSelected = icon;
+      this.selectedTab = icon;
     }
   }
 });

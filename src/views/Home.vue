@@ -25,7 +25,7 @@ export default defineComponent({
   mounted() {
     this.$router.push({
       query: {
-        skin: this.$route.query.skin || 'ffe6cf',
+        skin: this.$route.query.skinColor || 'ffe6cf',
         hair: this.$route.query.hair || 'diva',
         hairColor: this.$route.query.hairColor || '5c3b36',
         eyes: this.$route.query.eyes || 'sparkly',
