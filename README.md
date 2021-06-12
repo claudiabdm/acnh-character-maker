@@ -1,6 +1,9 @@
 # Animal Crossing: Character Maker
 
-https://user-images.githubusercontent.com/44007726/121782830-d0ed7080-cbab-11eb-9cb2-38fb5546ef8f.mov
+
+https://user-images.githubusercontent.com/44007726/121782906-34779e00-cbac-11eb-9a2b-425ca3c1c1ef.mov
+
+
 
 
 An animal crossing character maker for designing cute villagers.
