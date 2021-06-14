@@ -1,6 +1,13 @@
-# acnh-char-maker
+# Animal Crossing: Character Maker
+
+
+https://user-images.githubusercontent.com/44007726/121782906-34779e00-cbac-11eb-9a2b-425ca3c1c1ef.mov
+
+
+
 
 An animal crossing character maker for designing cute villagers.
+
 
 👩🏻‍💻Demo:
 https://animal-crossing-character-maker.netlify.app/
