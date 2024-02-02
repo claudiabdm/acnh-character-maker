@@ -52,7 +52,6 @@ export default defineComponent({
   border-radius: rem(20px);
   color: var(--base);
   background-color: var(--secondary-100);
-  font-family: $font-primary;
   font-size: $text-lg;
   letter-spacing: rem(1.5px);
   transition: $transition-bgc;

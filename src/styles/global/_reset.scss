@@ -147,6 +147,7 @@ input:not([type="checkbox"]) {
 button {
   background: none;
   border: none;
+  font: inherit;
 }
 
 textarea {
