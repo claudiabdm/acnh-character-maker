@@ -1,24 +1,21 @@
 // CORE                         //
 // ---------------------------- //
-@import 'mixins/mixins';
-@import 'global/variables';
-@import 'global/reset';
-@import 'global/typography';
-
-
+@forward './config.scss';
+@use './config.scss'  as *;
+@use 'global/_reset';
+@use 'global/_typography';
 
 // CUSTOM VARIABLES             //
 // ---------------------------- //
 :root {
-	--base: #{$base};
-	--grey-100: #{$grey-100};
-	--grey-200: #{$grey-200};
-	--grey-300: #{$grey-300};
-	--grey-400: #{$grey-400};
-	--app-height: 100%;
-  @include createColorVariables($primary, 'primary');
-  @include createColorVariables($secondary, 'secondary');
-	@include createColorVariables($tertiary, 'tertiary');
-	@include createColorVariables($accent, 'accent');
+  --base: #{$base};
+  --grey-100: #{$grey-100};
+  --grey-200: #{$grey-200};
+  --grey-300: #{$grey-300};
+  --grey-400: #{$grey-400};
+  --app-height: 100%;
+  @include createColorVariables($primary, "primary");
+  @include createColorVariables($secondary, "secondary");
+  @include createColorVariables($tertiary, "tertiary");
+  @include createColorVariables($accent, "accent");
 }
-

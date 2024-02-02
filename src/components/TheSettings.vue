@@ -1,25 +1,17 @@
 <template>
   <section class="settings">
     <nav class="settings__buttons" aria-label="Settings options">
-      <div
-        :class="[
-          'settings__link-wrapper',
-          { 'settings__link-wrapper--active': selectedTab === icon }
-        ]"
-        v-for="icon in icons"
-        :key="icon"
-        :aria-label="icon === 'nose-mouth' ? icon.replace('-', ' / ') : icon"
-        @click="onSelectTab(icon)"
-      >
-        <router-link
-          class="settings__link"
-          :to="{ path: icon, query: { ...$route.query } }"
-        >
+      <button :class="[
+        'settings__link-wrapper',
+        { 'settings__link-wrapper--active': selectedTab === icon }
+      ]" v-for="icon in icons" :key="icon" :aria-label="icon === 'nose-mouth' ? icon.replace('-', ' / ') : icon"
+        @click="onSelectTab(icon)">
+        <router-link class="settings__link" :to="{ path: icon, query: { ...$route.query } }" :aria-label="`Go to ${icon} tab`">
           <svg viewBow="0 0 1 1" class="settings__link-icon">
             <use :href="iconPath(icon)" />
           </svg>
         </router-link>
-      </div>
+      </button>
     </nav>
     <div class="settings__options">
       <router-view v-slot="{ Component }">
@@ -33,6 +25,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import icons from '/icons.svg?url';
+
 export default defineComponent({
   data() {
     return {
@@ -58,7 +52,7 @@ export default defineComponent({
   },
   methods: {
     iconPath(icon: string): string {
-      return require('@/assets/icons.svg') + '#' + icon;
+      return icons + '#' + icon;
     },
     onSelectTab(icon: string): void {
       this.selectedTab = icon;
@@ -68,8 +62,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/global/_variables.scss';
-@import '@/styles/mixins/_mixins.scss';
+@use '@/styles/config.scss' as *;
 
 .settings {
   @include size(100%, 100%);
@@ -101,6 +94,7 @@ export default defineComponent({
     margin: 0;
     margin-left: -10px;
     padding: 0;
+
     &::before {
       content: '';
       @include size(0, 0);
@@ -111,10 +105,12 @@ export default defineComponent({
       transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 1;
     }
+
     &--active {
       .settings__link-icon {
         color: var(--base);
       }
+
       &::before {
         @include size(max-content, auto);
         @include flex(center, center);
@@ -123,10 +119,11 @@ export default defineComponent({
         color: var(--tertiary-200);
         padding: rem(5px) 0;
         text-transform: capitalize;
-        font-size: rem(12px);
+        font-size: $text-xs;
         transform: translate3d(0, -130%, 0);
         opacity: 1;
         white-space: pre;
+
         @media screen and (min-width: 768px) {
           font-size: 1rem;
         }
@@ -137,6 +134,7 @@ export default defineComponent({
   &__link {
     @include flex(center, center);
     @include size(rem(60px), rem(60px));
+
     @media screen and (min-width: 768px) {
       @include size(rem(70px), rem(70px));
     }

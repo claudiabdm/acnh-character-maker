@@ -1,16 +1,21 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`The Viewer should match the snapshot 1`] = `
+exports[`The Viewer > should match the snapshot 1`] = `
 <section
   class="viewer"
+  data-v-523bb9d8=""
 >
   <section
     class="viewer__credit"
+    data-v-523bb9d8=""
   >
-    <p>
+    <p
+      data-v-523bb9d8=""
+    >
        Developed with ♥️ by 
       <a
         class="viewer__credit-link"
+        data-v-523bb9d8=""
         href="https://github.com/claudiabdm"
       >
          Claudia Benito 
@@ -19,16 +24,23 @@ exports[`The Viewer should match the snapshot 1`] = `
   </section>
   <div
     class="viewer__avatar"
+    data-v-523bb9d8=""
   >
-    <the-character-stub />
+    <the-character-stub
+      data-v-523bb9d8=""
+    />
   </div>
   <section
     class="viewer__credit"
+    data-v-523bb9d8=""
   >
-    <p>
+    <p
+      data-v-523bb9d8=""
+    >
        Character design by 
       <a
         class="viewer__credit-link"
+        data-v-523bb9d8=""
         href="https://www.figma.com/community/file/834210307944210537/Animal-Crossing-Character-Maker"
       >
          Ace S Chen 
@@ -37,6 +49,7 @@ exports[`The Viewer should match the snapshot 1`] = `
   </section>
   <button
     class="btn"
+    data-v-523bb9d8=""
     type="button"
   >
     Download Image

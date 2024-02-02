@@ -76,8 +76,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/global/_variables.scss';
-@import '@/styles/mixins/_mixins.scss';
+@use '@/styles/config.scss' as *;
 
 .viewer {
   @include flex(center, center, column);
@@ -87,7 +86,7 @@ export default defineComponent({
   }
   &__credit {
     color: var(--accent-200);
-    font-size: rem(12px);
+    font-size: $text-xs;
     margin: rem(10px);
   }
   &__credit-link {

@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { shallowMount, VueWrapper } from '@vue/test-utils';
 import SettingsSlider from '../SettingsSlider.vue';
+import { vi } from 'vitest';
 
 describe('The Settings Slider', () => {
   const elemList: string[] = [
@@ -44,7 +45,7 @@ describe('The Settings Slider', () => {
   });
 
   it('should call setInterval when calling onNext and an changeScrollPosition', () => {
-    const setIntervalSpy = jest.spyOn(window, 'setInterval');
+    const setIntervalSpy = vi.spyOn(window, 'setInterval');
     setIntervalSpy.mockClear();
     wrapper.vm.onNext();
     expect(setIntervalSpy).toHaveBeenCalledTimes(1);
@@ -52,14 +53,14 @@ describe('The Settings Slider', () => {
 
   it('should not call setInterval when calling onNext', () => {
     wrapper.setData({ interval: 1 });
-    const setIntervalSpy = jest.spyOn(window, 'setInterval');
+    const setIntervalSpy = vi.spyOn(window, 'setInterval');
     setIntervalSpy.mockClear();
     wrapper.vm.onNext();
     expect(setIntervalSpy).toHaveBeenCalledTimes(0);
   });
 
   it('should call setInterval calling onPrev', () => {
-    const setIntervalSpy = jest.spyOn(window, 'setInterval');
+    const setIntervalSpy = vi.spyOn(window, 'setInterval');
     setIntervalSpy.mockClear();
     wrapper.vm.onPrev();
     expect(setIntervalSpy).toHaveBeenCalledTimes(1);
@@ -67,7 +68,7 @@ describe('The Settings Slider', () => {
 
   it('should not call setInterval when calling onPrev', () => {
     wrapper.setData({ interval: 1 });
-    const setIntervalSpy = jest.spyOn(window, 'setInterval');
+    const setIntervalSpy = vi.spyOn(window, 'setInterval');
     setIntervalSpy.mockClear();
     wrapper.vm.onPrev();
     expect(setIntervalSpy).toHaveBeenCalledTimes(0);
@@ -192,7 +193,7 @@ describe('The Settings Slider', () => {
 
   it('should return a path to svg symbol', () => {
     const path = wrapper.vm.elemPath('eyes-oval');
-    expect(path).toBe('#eyes-oval');
+    expect(path).toBe('/settings-sprite.svg#eyes-oval');
   });
 
   it('should emit elem clicked', async () => {

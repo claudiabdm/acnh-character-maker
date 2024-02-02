@@ -1562,9 +1562,7 @@
     </svg>
     <img
       class="character__clothes"
-      :src="
-        `https://res.cloudinary.com/claudiabdm/image/upload/f_auto/animal-crossing/${clothes}.png`
-      "
+      :src="`https://res.cloudinary.com/claudiabdm/image/upload/f_auto/animal-crossing/${clothes}.png`"
       width="214"
       height="169"
       :alt="clothes"
@@ -1574,7 +1572,7 @@
 <!-- prettier-ignore-end -->
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
   computed: {
@@ -1607,13 +1605,13 @@ export default defineComponent({
     },
     clothes(): string {
       return `${this.$route.query.clothes}`;
-    }
-  }
+    },
+  },
 });
 </script>
 <style lang="scss" scoped>
-@import '@/styles/global/_variables.scss';
-@import '@/styles/mixins/_mixins.scss';
+@use "sass:math";
+@use "@/styles/config.scss" as *;
 
 $avatar-size: 200px;
 
@@ -1641,10 +1639,10 @@ $avatar-size: 200px;
   }
   &__clothes {
     position: absolute;
-    width: rem((214px * $avatar-size) / 300px);
-    height: rem((163px * $avatar-size) / 300px);
-    top: rem((190px * $avatar-size) / 300px);
-    right: rem((44px * $avatar-size) / 300px);
+    width: rem(math.div(214px * $avatar-size, 300px));
+    height: rem(math.div(163px * $avatar-size, 300px));
+    top: rem(math.div(190px * $avatar-size, 300px));
+    right: rem(math.div(44px * $avatar-size, 300px));
     z-index: 0;
     @media screen and (min-width: 1024px) {
       width: rem(214px);

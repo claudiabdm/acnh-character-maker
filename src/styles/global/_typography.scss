@@ -1,15 +1,17 @@
+@use '../global/variables' as *;
+
 // FONTS                        //
 // ---------------------------- //
 @font-face {
   font-family: 'AcnhTitle'; 
   font-display: swap;
-  src: url(~@/assets/font/FinkHeavy.ttf);
-  src: url(~@/assets/font/FinkHeavy.woff2);
-  src: url(~@/assets/font/FinkHeavy.woff);
+  src: url(@/assets/font/FinkHeavy.ttf);
+  src: url(@/assets/font/FinkHeavy.woff2);
+  src: url(@/assets/font/FinkHeavy.woff);
 }
 @font-face {
   font-family: 'AcnhDialog';
-  src: url(~@/assets/font/ArialRoundedBold.ttf);
+  src: url(@/assets/font/ArialRoundedBold.ttf);
 }
 
 .text-xs {

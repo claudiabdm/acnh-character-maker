@@ -1,17 +1,21 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`The Settings Slider should match the snapshot 1`] = `
+exports[`The Settings Slider > should match the snapshot 1`] = `
 <div
   class="slider slider--row"
+  data-v-46d24d8f=""
 >
   <button
+    aria-label="Go to previous"
     class="slider__btn slider__btn--prev"
     data-test="buttonPrev"
+    data-v-46d24d8f=""
     style="display: none;"
     type="button"
   >
     <svg
       class="slider__btn-svg"
+      data-v-46d24d8f=""
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -19,6 +23,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
     >
       <path
         d="M15 19l-7-7 7-7"
+        data-v-46d24d8f=""
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="1"
@@ -27,42 +32,52 @@ exports[`The Settings Slider should match the snapshot 1`] = `
   </button>
   <div
     class="slider__scroll"
+    data-v-46d24d8f=""
   >
     <ul
       class="slider__elem-list slider__elem-list--row"
+      data-v-46d24d8f=""
     >
       
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select zzzlashes"
           class="slider__elem-btn"
           data-test="select-elem-zzzlashes"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#zzzlashes"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#zzzlashes"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -73,6 +88,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -86,35 +102,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select eyes-oval"
           class="slider__elem-btn slider__elem-btn--tick"
           data-test="select-elem-eyes-oval"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#eyes-oval"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#eyes-oval"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick slider__elem-tick--active"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -125,6 +149,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -138,35 +163,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select ovaltoplash"
           class="slider__elem-btn"
           data-test="select-elem-ovaltoplash"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#ovaltoplash"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#ovaltoplash"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -177,6 +210,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -190,35 +224,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select ovalbottomlash"
           class="slider__elem-btn"
           data-test="select-elem-ovalbottomlash"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#ovalbottomlash"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#ovalbottomlash"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -229,6 +271,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -242,35 +285,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select eyes-circle"
           class="slider__elem-btn"
           data-test="select-elem-eyes-circle"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#eyes-circle"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#eyes-circle"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -281,6 +332,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -294,35 +346,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select circletoplash"
           class="slider__elem-btn"
           data-test="select-elem-circletoplash"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#circletoplash"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#circletoplash"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -333,6 +393,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -346,35 +407,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select circlebottomlash"
           class="slider__elem-btn"
           data-test="select-elem-circlebottomlash"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#circlebottomlash"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#circlebottomlash"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -385,6 +454,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -398,35 +468,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select smilinglash"
           class="slider__elem-btn"
           data-test="select-elem-smilinglash"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#smilinglash"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#smilinglash"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -437,6 +515,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -450,35 +529,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select smiling"
           class="slider__elem-btn"
           data-test="select-elem-smiling"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#smiling"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#smiling"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -489,6 +576,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -502,35 +590,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select zzz"
           class="slider__elem-btn"
           data-test="select-elem-zzz"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#zzz"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#zzz"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -541,6 +637,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -554,35 +651,43 @@ exports[`The Settings Slider should match the snapshot 1`] = `
       </li>
       <li
         class="slider__elem"
+        data-v-46d24d8f=""
       >
         <button
+          aria-label="Select lookatme"
           class="slider__elem-btn"
           data-test="select-elem-lookatme"
+          data-v-46d24d8f=""
           type="button"
         >
           <svg
             class="slider__elem-svg"
+            data-v-46d24d8f=""
             fill="#000"
             stroke="#000"
             viewBox="0 0 1 1"
           >
             <use
-              href="#lookatme"
+              data-v-46d24d8f=""
+              href="/settings-sprite.svg#lookatme"
             />
           </svg>
         </button>
         <svg
           class="slider__elem-tick"
+          data-v-46d24d8f=""
           viewBox="0 0 65 65"
         >
           <ellipse
             cx="32"
             cy="32"
+            data-v-46d24d8f=""
             fill="#49dbc6"
             rx="30"
             ry="30"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -593,6 +698,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
             y="35"
           />
           <rect
+            data-v-46d24d8f=""
             fill="#fff"
             height="6"
             rx="0"
@@ -608,13 +714,16 @@ exports[`The Settings Slider should match the snapshot 1`] = `
     </ul>
   </div>
   <button
+    aria-label="Go to next"
     class="slider__btn slider__btn--next"
     data-test="buttonNext"
+    data-v-46d24d8f=""
     style="display: none;"
     type="button"
   >
     <svg
       class="slider__btn-svg"
+      data-v-46d24d8f=""
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -622,6 +731,7 @@ exports[`The Settings Slider should match the snapshot 1`] = `
     >
       <path
         d="M9 5l7 7-7 7"
+        data-v-46d24d8f=""
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="1"

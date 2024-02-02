@@ -2,8 +2,8 @@
 // MIXINS                       //
 // ---------------------------- //
 
-@import "_position";
-@import "_display";
-@import "_rem";
-@import "_size";
-@import "_colors";
+@forward "_position";
+@forward "_display";
+@forward "_rem";
+@forward "_size";
+@forward "_colors";

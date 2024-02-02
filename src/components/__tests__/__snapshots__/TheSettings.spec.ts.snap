@@ -1,83 +1,109 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`The Settings should match the snapshot 1`] = `
+exports[`The Settings > should match the snapshot 1`] = `
 <section
   class="settings"
+  data-v-9b072b1e=""
 >
   <nav
     aria-label="Settings options"
     class="settings__buttons"
+    data-v-9b072b1e=""
   >
     
-    <div
+    <button
       aria-label="skin"
       class="settings__link-wrapper settings__link-wrapper--active"
+      data-v-9b072b1e=""
     >
       <router-link-stub
+        aria-label="Go to skin tab"
         class="settings__link"
+        data-v-9b072b1e=""
         to="[object Object]"
       />
-    </div>
-    <div
+    </button>
+    <button
       aria-label="hair"
       class="settings__link-wrapper"
+      data-v-9b072b1e=""
     >
       <router-link-stub
+        aria-label="Go to hair tab"
         class="settings__link"
+        data-v-9b072b1e=""
         to="[object Object]"
       />
-    </div>
-    <div
+    </button>
+    <button
       aria-label="eyes"
       class="settings__link-wrapper"
+      data-v-9b072b1e=""
     >
       <router-link-stub
+        aria-label="Go to eyes tab"
         class="settings__link"
+        data-v-9b072b1e=""
         to="[object Object]"
       />
-    </div>
-    <div
+    </button>
+    <button
       aria-label="nose / mouth"
       class="settings__link-wrapper"
+      data-v-9b072b1e=""
     >
       <router-link-stub
+        aria-label="Go to nose-mouth tab"
         class="settings__link"
+        data-v-9b072b1e=""
         to="[object Object]"
       />
-    </div>
-    <div
+    </button>
+    <button
       aria-label="blush"
       class="settings__link-wrapper"
+      data-v-9b072b1e=""
     >
       <router-link-stub
+        aria-label="Go to blush tab"
         class="settings__link"
+        data-v-9b072b1e=""
         to="[object Object]"
       />
-    </div>
-    <div
+    </button>
+    <button
       aria-label="background"
       class="settings__link-wrapper"
+      data-v-9b072b1e=""
     >
       <router-link-stub
+        aria-label="Go to background tab"
         class="settings__link"
+        data-v-9b072b1e=""
         to="[object Object]"
       />
-    </div>
-    <div
+    </button>
+    <button
       aria-label="clothes"
       class="settings__link-wrapper"
+      data-v-9b072b1e=""
     >
       <router-link-stub
+        aria-label="Go to clothes tab"
         class="settings__link"
+        data-v-9b072b1e=""
         to="[object Object]"
       />
-    </div>
+    </button>
     
   </nav>
   <div
     class="settings__options"
+    data-v-9b072b1e=""
   >
-    <router-view-stub />
+    <router-view-stub
+      data-v-9b072b1e=""
+    />
   </div>
 </section>
 `;

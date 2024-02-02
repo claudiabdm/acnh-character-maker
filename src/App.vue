@@ -34,14 +34,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '@/styles/styles.scss';
-html {
-  background-color: var(--primary-100);
-  font-size: 14px;
-  @media screen and (min-width: 1024px) {
-    font-size: 16px;
-  }
-}
+@use '@/styles/styles.scss' as *;
 
 #app {
   @include size(100%, 100%);
@@ -49,9 +42,11 @@ html {
   font-family: $font-primary;
   overflow: hidden;
 }
+
 .main {
   @include flex(center, space-between, column);
   @include size(100%, 100%);
+
   @media screen and (min-width: 1024px) {
     @include size(100%, 100vh);
     flex-direction: row;
@@ -62,7 +57,12 @@ html {
 .fade-leave-active {
   transition: opacity 0.15s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+  {
   opacity: 0;
 }
 
@@ -85,5 +85,4 @@ html {
 //     opacity: 1;
 //     transform: translate3d(0, 0, 0);
 //   }
-// }
-</style>
+// }</style>

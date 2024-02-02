@@ -1,21 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`The Color Selector should match the snapshot 1`] = `
+exports[`The Color Selector > should match the snapshot 1`] = `
 <ul
   class="colors"
+  data-v-45e5ffe2=""
 >
   
   <li
     class="colors__color-wrapper"
+    data-v-45e5ffe2=""
   >
     <svg
       class="colors__color colors__color--tick"
       data-test="color-#fff"
+      data-v-45e5ffe2=""
       viewBox="0 0 85 85"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="m267.66 57.85a218.13 146.53 0 0 0-218.13 146.53 218.13 146.53 0 0 0 4.9668 31.086 218.13 146.53 0 0 0-28.277 72.152 218.13 146.53 0 0 0 218.13 146.53 218.13 146.53 0 0 0 218.13-146.53 218.13 146.53 0 0 0-4.9668-31.086 218.13 146.53 0 0 0 28.277-72.152 218.13 146.53 0 0 0-218.13-146.53z"
+        data-v-45e5ffe2=""
         fill="#fff"
         stroke="transparent"
         stroke-width="1.0488"
@@ -25,16 +29,19 @@ exports[`The Color Selector should match the snapshot 1`] = `
     <svg
       class="colors__color-tick colors__color-tick--active"
       data-test="color-tick-#fff"
+      data-v-45e5ffe2=""
       viewBox="0 0 65 65"
     >
       <ellipse
         cx="32"
         cy="32"
+        data-v-45e5ffe2=""
         fill="#49dbc6"
         rx="30"
         ry="30"
       />
       <rect
+        data-v-45e5ffe2=""
         fill="#fff"
         height="6"
         rx="0"
@@ -45,6 +52,7 @@ exports[`The Color Selector should match the snapshot 1`] = `
         y="35"
       />
       <rect
+        data-v-45e5ffe2=""
         fill="#fff"
         height="6"
         rx="0"
@@ -58,15 +66,18 @@ exports[`The Color Selector should match the snapshot 1`] = `
   </li>
   <li
     class="colors__color-wrapper"
+    data-v-45e5ffe2=""
   >
     <svg
       class="colors__color"
       data-test="color-#000"
+      data-v-45e5ffe2=""
       viewBox="0 0 85 85"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="m267.66 57.85a218.13 146.53 0 0 0-218.13 146.53 218.13 146.53 0 0 0 4.9668 31.086 218.13 146.53 0 0 0-28.277 72.152 218.13 146.53 0 0 0 218.13 146.53 218.13 146.53 0 0 0 218.13-146.53 218.13 146.53 0 0 0-4.9668-31.086 218.13 146.53 0 0 0 28.277-72.152 218.13 146.53 0 0 0-218.13-146.53z"
+        data-v-45e5ffe2=""
         fill="#000"
         stroke="transparent"
         stroke-width="1.0488"
@@ -76,16 +87,19 @@ exports[`The Color Selector should match the snapshot 1`] = `
     <svg
       class="colors__color-tick"
       data-test="color-tick-#000"
+      data-v-45e5ffe2=""
       viewBox="0 0 65 65"
     >
       <ellipse
         cx="32"
         cy="32"
+        data-v-45e5ffe2=""
         fill="#49dbc6"
         rx="30"
         ry="30"
       />
       <rect
+        data-v-45e5ffe2=""
         fill="#fff"
         height="6"
         rx="0"
@@ -96,6 +110,7 @@ exports[`The Color Selector should match the snapshot 1`] = `
         y="35"
       />
       <rect
+        data-v-45e5ffe2=""
         fill="#fff"
         height="6"
         rx="0"

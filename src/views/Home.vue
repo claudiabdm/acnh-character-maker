@@ -42,8 +42,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '@/styles/global/_variables.scss';
-@import '@/styles/mixins/_mixins.scss';
+@use '@/styles/config.scss' as *;
 
 .btn {
   width: 100%;

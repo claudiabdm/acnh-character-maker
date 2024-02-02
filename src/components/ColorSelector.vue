@@ -62,7 +62,7 @@ export default defineComponent({
   emits: ['colorChanged'],
   props: {
     colors: {
-      type: Array,
+      type: Array<string>,
       required: true
     },
     selectedColor: {
@@ -84,8 +84,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/global/_variables.scss';
-@import '@/styles/mixins/_mixins.scss';
+@use '@/styles/config.scss' as *;
 
 .colors {
   width: 100%;

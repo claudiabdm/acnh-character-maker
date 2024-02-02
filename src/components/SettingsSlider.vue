@@ -1,112 +1,43 @@
 <template>
   <div :class="['slider', { 'slider--row': isRow }]">
-    <button
-      v-show="isPrevVisible"
-      class="slider__btn slider__btn--prev"
-      type="button"
-      @mousedown="onPrev()"
-      @mouseleave="stopInterval"
-      @mouseup="stopInterval"
-      @touchstart="onPrev()"
-      @touchend="stopInterval"
-      @touchcancel="stopInterval"
-      data-test="buttonPrev"
-    >
-      <svg
-        class="slider__btn-svg"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1"
-          d="M15 19l-7-7 7-7"
-        ></path>
+    <button v-show="isPrevVisible" class="slider__btn slider__btn--prev" type="button" @mousedown="onPrev()"
+      @mouseleave="stopInterval" @mouseup="stopInterval" @touchstart="onPrev()" @touchend="stopInterval"
+      @touchcancel="stopInterval" data-test="buttonPrev" aria-label="Go to previous">
+      <svg class="slider__btn-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path>
       </svg>
     </button>
     <div class="slider__scroll" ref="sliderScroll">
       <ul :class="['slider__elem-list', { 'slider__elem-list--row': isRow }]">
         <li class="slider__elem" v-for="elem in elemList" :key="elem">
-          <button
-            type="button"
-            :class="[
-              'slider__elem-btn',
-              { 'slider__elem-btn--tick': currentElem === elem }
-            ]"
-            @click="changeCurrentElem(elem)"
-            :data-test="`select-elem-${elem}`"
-          >
-            <svg
-              viewBox="0 0 1 1"
-              class="slider__elem-svg"
-              :fill="currentElemColor"
-              :stroke="currentElemColor"
-            >
+          <button type="button" :class="[
+            'slider__elem-btn',
+            { 'slider__elem-btn--tick': currentElem === elem }
+          ]" @click="changeCurrentElem(elem)" :data-test="`select-elem-${elem}`" :aria-label="`Select ${elem}`">
+            <svg viewBox="0 0 1 1" class="slider__elem-svg" :fill="currentElemColor" :stroke="currentElemColor">
               <use :href="elemPath(elem)" />
             </svg>
           </button>
-          <svg
-            :class="[
-              'slider__elem-tick',
-              {
-                'slider__elem-tick--active': currentElem === elem
-              }
-            ]"
-            viewBox="0 0 65 65"
-          >
+          <svg :class="[
+            'slider__elem-tick',
+            {
+              'slider__elem-tick--active': currentElem === elem
+            }
+          ]" viewBox="0 0 65 65">
             <ellipse fill="#49dbc6" cx="32" cy="32" rx="30" ry="30" />
-            <rect
-              x="36"
-              y="35"
-              width="20"
-              height="6"
-              rx="0"
-              ry="0"
-              fill="#fff"
-              transform="rotate(40, 26 10)"
-            />
-            <rect
-              x="0"
-              y="34"
-              width="32"
-              height="6"
-              rx="0"
-              ry="0"
-              fill="#fff"
-              transform="rotate(-50, 26 10)"
-            />
+            <rect x="36" y="35" width="20" height="6" rx="0" ry="0" fill="#fff" transform="rotate(40, 26 10)" />
+            <rect x="0" y="34" width="32" height="6" rx="0" ry="0" fill="#fff" transform="rotate(-50, 26 10)" />
           </svg>
         </li>
       </ul>
     </div>
-    <button
-      v-show="isNextVisible"
-      class="slider__btn slider__btn--next"
-      type="button"
-      @mousedown="onNext()"
-      @mouseleave="stopInterval"
-      @mouseup="stopInterval"
-      @touchstart="onNext()"
-      @touchend="stopInterval"
-      @touchcancel="stopInterval"
-      data-test="buttonNext"
-    >
-      <svg
-        class="slider__btn-svg"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1"
-          d="M9 5l7 7-7 7"
-        ></path>
+    <button v-show="isNextVisible" class="slider__btn slider__btn--next" type="button" @mousedown="onNext()"
+      @mouseleave="stopInterval" @mouseup="stopInterval" @touchstart="onNext()" @touchend="stopInterval"
+      @touchcancel="stopInterval" data-test="buttonNext"  aria-label="Go to next">
+      <svg class="slider__btn-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path>
       </svg>
     </button>
   </div>
@@ -114,12 +45,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import settingsSprite from '/settings-sprite.svg?url';
 
 export default defineComponent({
   data() {
     return {
       sliderScrollEl: this.$refs.sliderScroll as Element,
-      interval: 0,
+      interval: 0 as number | ReturnType<typeof setTimeout>,
       position: 0,
       isPrevVisible: false,
       isNextVisible: true,
@@ -137,11 +69,11 @@ export default defineComponent({
   },
   props: {
     elemList: {
-      type: Array,
+      type: Array<string>,
       required: true
     },
     elemType: {
-      type: String as () => 'hairs' | 'eyes',
+      type: String as () => 'hairs' | 'eyes' | 'mouths' | 'noses' | 'blushes',
       required: true
     },
     currentElem: {
@@ -208,7 +140,7 @@ export default defineComponent({
       }
     },
     elemPath(elem: string): string {
-      return require('@/assets/settings-sprite.svg') + '#' + elem;
+      return settingsSprite + '#' + elem;
     },
     changeCurrentElem(elem: string) {
       this.$emit('elemSelected', elem);
@@ -218,8 +150,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/global/_variables.scss';
-@import '@/styles/mixins/_mixins.scss';
+@use "sass:math";
+@use '@/styles/config.scss' as *;
+
 .slider {
   position: relative;
   padding: rem(10px) rem(50px);
@@ -241,12 +174,15 @@ export default defineComponent({
     @include size(rem(50px), rem(50px));
     position: absolute;
     top: calc(50% - 25px);
+
     &:hover {
       cursor: pointer;
     }
+
     &--next {
       right: 0;
     }
+
     &--prev {
       left: 0;
     }
@@ -268,6 +204,7 @@ export default defineComponent({
     align-items: center;
     column-gap: 5%;
     padding: rem(5px) 0;
+
     &--row {
       @include flex(center, space-evenly, row);
       flex-wrap: nowrap;
@@ -280,8 +217,9 @@ export default defineComponent({
   }
 
   &__elem {
-    @include size(rem(145px / 2), rem(160px / 2));
+    @include size(rem(math.div(145px, 2)), rem(math.div(160px, 2)));
     position: relative;
+
     @media screen and (min-width: 1024px) {
       @include size(rem(145px), rem(160px));
     }
@@ -293,6 +231,7 @@ export default defineComponent({
     padding: rem(10px);
     align-items: center;
     justify-content: center;
+
     &::before {
       @include size(100%, 100%);
       content: '';
@@ -315,6 +254,7 @@ export default defineComponent({
   &__elem-img {
     @include size(100%, 100%);
     z-index: 2;
+
     &:hover {
       cursor: pointer;
     }
@@ -324,6 +264,7 @@ export default defineComponent({
     width: 100%;
     transition: $transition-color;
     z-index: 2;
+
     &:hover {
       cursor: pointer;
     }
@@ -338,9 +279,11 @@ export default defineComponent({
     opacity: 0;
     transition: width 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275),
       height 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
     &--active {
       @include size(rem(26px));
       opacity: 1;
+
       @media screen and (min-width: 768px) {
         @include size(rem(30px));
       }
