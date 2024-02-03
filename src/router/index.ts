@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
+import PrivacyVue from '@/views/Privacy.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -45,6 +46,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/SettingsClothes.vue')
       }
     ]
+  }, 
+  {
+    path: '/privacy',
+    name: 'privacy',
+    component: PrivacyVue
   }
 ];
 

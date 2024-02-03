@@ -41,6 +41,7 @@ export default defineComponent({
   background-image: url('https://res.cloudinary.com/claudiabdm/image/upload/v1623082404/animal-crossing/newhorizons_wallpaper_CharEditor.png');
   font-family: $font-primary;
   overflow: hidden;
+  color: var(--accent-200);
 }
 
 .main {

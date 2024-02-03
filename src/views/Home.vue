@@ -44,29 +44,6 @@ export default defineComponent({
 <style lang="scss">
 @use '@/styles/config.scss' as *;
 
-.btn {
-  width: 100%;
-  margin: rem(10px);
-  padding: rem(10px);
-  border: none;
-  border-radius: rem(20px);
-  color: var(--base);
-  background-color: var(--secondary-100);
-  font-size: $text-lg;
-  letter-spacing: rem(1.5px);
-  transition: $transition-bgc;
-  &:hover {
-    cursor: pointer;
-    background-color: var(--secondary-200);
-  }
-  @media screen and (min-width: 1024px) {
-    width: rem(300px);
-    padding: rem(20px);
-    margin: rem(20px);
-    font-size: $text-xl;
-  }
-}
-
 canvas {
   display: none;
 }
