@@ -38,7 +38,7 @@ export default defineComponent({
         'background',
         'clothes'
       ],
-      selectedTab: 'skin'
+      selectedTab: this.$route.name || 'skin'
     };
   },
   watch: {
@@ -54,6 +54,7 @@ export default defineComponent({
       return icons + '#' + icon;
     },
     onSelectTab(icon: string): void {
+      console.log(icon)
       this.selectedTab = icon;
     }
   }
