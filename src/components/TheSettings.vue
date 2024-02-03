@@ -1,16 +1,18 @@
 <template>
   <section class="settings">
     <nav class="settings__buttons" aria-label="Settings options">
-      <router-link :class="[
+      <button :class="[
         'settings__link-wrapper',
-        { 'settings__link-wrapper--active': selectedTab === icon },
-        'settings__link'
+        { 'settings__link-wrapper--active': selectedTab === icon }
       ]" v-for="icon in icons" :key="icon" :aria-label="icon === 'nose-mouth' ? icon.replace('-', ' / ') : icon"
-        :to="{ path: icon, query: { ...$route.query } }">
-        <svg viewBow="0 0 1 1" class="settings__link-icon">
-          <use :href="iconPath(icon)" />
-        </svg>
-      </router-link>
+        @click="onSelectTab(icon)">
+        <router-link class="settings__link" :to="{ path: icon, query: { ...$route.query } }"
+          :aria-label="`Go to ${icon} tab`">
+          <svg viewBow="0 0 1 1" class="settings__link-icon">
+            <use :href="iconPath(icon)" />
+          </svg>
+        </router-link>
+      </button>
     </nav>
     <div class="settings__options">
       <router-view v-slot="{ Component }">
