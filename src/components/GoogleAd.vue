@@ -1,7 +1,7 @@
 <template>
     <!-- horizontal -->
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2962766474584063" data-ad-slot="6405689266"
-        data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" data-ad-client="ca-pub-2962766474584063" data-ad-slot="6405689266"
+        data-full-width-responsive='false'></ins>
 </template>
 
 <script lang="ts">
@@ -18,9 +18,7 @@ export default defineComponent({
 @use '@/styles/config.scss' as *;
 
 .adsbygoogle {
-    @include size(100%, 80px);
-    display: block;
-    position: absolute;
-    top: 0;
+    @include size(100%, 50px);
+    @include flex(center, center);
 }
 </style>

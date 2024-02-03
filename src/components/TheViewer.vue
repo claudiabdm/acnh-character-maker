@@ -1,6 +1,5 @@
 <template>
   <section class="viewer">
-    <GoogleAd />
     <section class="viewer__credit">
       <p>
         Developed with ♥️ by
@@ -24,13 +23,14 @@
     <button class="viewer__btn" type="button" @click="downloadSVGAsPNG">
       {{ downloadText }}
     </button>
+    <google-ad />
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TheCharacter from '@/components/TheCharacter.vue';
-import GoogleAd from './GoogleAd.vue';
+import GoogleAd from '@/components/GoogleAd.vue';
 
 export default defineComponent({
   components: { TheCharacter, GoogleAd },
@@ -84,10 +84,6 @@ export default defineComponent({
   position: relative;
   padding: 20px;
 
-  @media screen and (min-width: 1024px) {
-    padding: 10vw;
-  }
-
   &__credit {
     font-size: $text-xs;
     padding: 10px;
@@ -101,6 +97,7 @@ export default defineComponent({
   &__btn {
     width: 100%;
     max-width: max-content;
+    height: 45px;
     padding: 10px 20px;
     margin: 10px;
     border: none;

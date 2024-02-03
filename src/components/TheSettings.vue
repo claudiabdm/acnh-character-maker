@@ -54,7 +54,6 @@ export default defineComponent({
       return icons + '#' + icon;
     },
     onSelectTab(icon: string): void {
-      console.log(icon)
       this.selectedTab = icon;
     }
   }
