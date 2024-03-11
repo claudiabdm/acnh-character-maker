@@ -29,10 +29,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TheCharacter from '@/components/TheCharacter.vue';
-import GoogleAd from '@/components/GoogleAd.vue';
 
 export default defineComponent({
-  components: { TheCharacter, GoogleAd },
+  components: { TheCharacter },
   data() {
     return {
       downloadText: 'Download Image'
