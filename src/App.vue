@@ -19,6 +19,7 @@ export default defineComponent({
     const title = 'AC: Character Maker';
 
     useMeta({
+      title,
       'mobile-web-app-capable': {
         title
       },

@@ -23,7 +23,6 @@
     <button class="viewer__btn" type="button" @click="downloadSVGAsPNG">
       {{ downloadText }}
     </button>
-    <google-ad />
   </section>
 </template>
 

@@ -48,7 +48,7 @@ exports[`The Viewer > should match the snapshot 1`] = `
     </p>
   </section>
   <button
-    class="btn"
+    class="viewer__btn"
     data-v-523bb9d8=""
     type="button"
   >
