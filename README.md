@@ -10,7 +10,7 @@ An animal crossing character maker for designing cute villagers.
 
 
 👩🏻‍💻Demo:
-https://animal-crossing-character-maker.netlify.app/
+https://animal-crossing-character-maker.pages.dev/
 
 🎨Character design by: 
 https://www.figma.com/community/file/834210307944210537/Animal-Crossing-Character-Maker
