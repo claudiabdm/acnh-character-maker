@@ -1,0 +1,10 @@
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+    from = "https://animal-crossing-character-maker.netlify.app/*"
+    to = "https://animal-crossing-character-maker.pages.dev/:splat"
+    status = 301
+    force=true
